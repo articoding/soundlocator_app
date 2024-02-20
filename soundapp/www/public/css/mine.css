@@ -1,0 +1,80 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+/*Pantallas movil*/
+
+.app{
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;
+}
+
+.circle{
+    border-radius: 50%; /* Make the element a perfect circle */
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  background-color: #007bff; /* Change the background color */
+  color: white; /* Change the text color */
+  text-align: center; /* Center the text */
+  line-height: 50px; /* Align the text vertically */
+  display: inline-block; /* Ensure consistent display across browsers */
+  white-space: nowrap;
+  text-overflow: ellipsis; /* This line truncates text with ellipsis... */
+}
+
+
+.profile-data{
+
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Light.ttf);
+    src: url(../fonts/Poppins-Black.ttf);
+    src: url(../fonts/Poppins-Medium.ttf);
+
+    background-image: url("../img/sophie-back.jpg"); /* Replace with your image path */
+    background-repeat: no-repeat; /* Optional: Prevents image tiling */
+    background-size: cover; /* Optional: Ensures image fills the background */
+    background-color: transparent; /* Remove background color */
+    padding: 0; /* Adjust padding if needed */
+    background-position-y: -9rem; /* Adjust position of background image */
+  
+
+
+    div.bg-white{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #F9F1D9 !important;
+        img{
+            position: relative;
+            top: -2rem;
+            width: 6rem;
+            height: 6rem;
+            object-fit: contain;
+            /* object-position: .5rem 5px; */
+
+        }
+        div{
+            width: 100%;
+        }
+    }
+}
+
+
+
+.text-dark.custom-color{
+    color: #0011ff !important;
+    font-weight: bolder;
+
+    
+}
+
+/*Pantallas tablet*/
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
