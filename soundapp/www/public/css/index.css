@@ -16,6 +16,10 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+@import url('bootstrap/dist/css/bootstrap.min.css');
+@import url('bootstrap-icons/font/bootstrap-icons.css');
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
 }
@@ -24,8 +28,7 @@ body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    background-color:#E4E4E4;
-    background-image:linear-gradient(to bottom, #A7A7A7 0%, #E4E4E4 51%);
+    background-color:#E6E6E6;
     font-family: system-ui, -apple-system, -apple-system-font, 'Segoe UI', 'Roboto', sans-serif;
     font-size:12px;
     height:100vh;
@@ -37,18 +40,43 @@ body {
     width:100%;
 }
 
-/* Portrait layout (default) */
-.app {
-    background:url(../img/logo.png) no-repeat center top; /* 170px x 200px */
-    position:absolute;             /* position in the center of the screen */
-    left:50%;
-    top:50%;
-    height:50px;                   /* text area height */
-    width:225px;                   /* text area width */
-    text-align:center;
-    padding:180px 0px 0px 0px;     /* image height is 200px (bottom 20px are overlapped with text) */
-    margin:-115px 0px 0px -112px;  /* offset vertical: half of image height and text area height */
-                                   /* offset horizontal: half of text area width */
+.nav-init {
+    overflow-x: clip;
+    div.bg-uttn-gr{
+        height: 10vh;
+    }
+    .uttn-logo{
+        width: 6rem;
+        height: auto;
+        filter: drop-shadow(1px 1px 0px gray);
+    }
+    .nav-user-profile{
+        width: 2rem;
+        height: 2rem;
+        object-fit: contain;
+        transition: transform .4s ease;
+        transform: scale(1);
+        &:hover{
+            transform: scale(1.1);
+        }
+    }
+    .navmenu-list{
+        transition: left 1s ease-in-out;
+        height: 100vh;
+        left: 100%;
+        overflow-y: auto;
+        z-index: 10;
+        li{
+            transition: background-color .2s linear;
+            background-color: transparent;
+            color: mediumseagreen;
+            padding: .5rem 1rem;
+            &:not(:first-child, :last-child):hover{
+                color: whitesmoke;
+                background-color: mediumseagreen;
+            }
+        }
+    }
 }
 
 /* Landscape layout (with min-width) */
@@ -88,8 +116,6 @@ h1 {
     display:none;
 }
 
-#deviceready.ready .event.listening { display: none; }
-#deviceready.ready .event.received { display: block; }
 
 @keyframes fade {
     from { opacity: 1.0; }
