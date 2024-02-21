@@ -48,14 +48,18 @@
         <nav class="w-100 nav-init position-sticky top-0 z-3">
 
         </nav>
+        <!--End Navbar-->
 
+        <!--Main Content-->
         <div class="app">
           
         </div>
+        <!--End Main Content-->
         <script src="cordova.js"></script>
         <script src="public/js/index.js"></script>
-        <script>
+        <script> // Load the menu partial view
             loadPartialView('Modules/profile_data', document.querySelector('.app'))
+            loadPartialView('home/navbar', document.querySelector('nav.nav-init'))
         </script>
     </body>
 </html>
