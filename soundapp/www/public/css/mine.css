@@ -81,16 +81,36 @@
 }
 
 nav{
+
     background-color: #F9F1D9 !important;
     a{
         color: #0011ff !important;
     }
     .my-4{
-        font-family: "Poppins";
+        font-family: "Poppins Semibold";
+        font-weight: bolder;
         src: url(../fonts/Poppins-Regular.ttf);
         src: url(../fonts/Poppins-Black.ttf);
         src: url(../fonts/Poppins-Medium.ttf);
 
     }
+
+    .bi-soundwave{
+        font-size: 2rem;
+        color: black    ;
+    }
+
+    .bi-gear-wide-connected{
+        font-size: 2rem;
+        color: black    ;
+    }
+
+    .ul{
+        list-style-type: none; /* Remove bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    
     
 }
