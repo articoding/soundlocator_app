@@ -4,6 +4,7 @@
 }
 /*Pantallas movil*/
 
+
 .app{
     width: 100vw;
     height: 100vh;
@@ -27,7 +28,7 @@
 .profile-data{
 
     font-family: "Poppins";
-    src: url(../fonts/Poppins-Light.ttf);
+    src: url(../fonts/Poppins-Regular.ttf);
     src: url(../fonts/Poppins-Black.ttf);
     src: url(../fonts/Poppins-Medium.ttf);
 
@@ -77,4 +78,19 @@
         margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
                                       /* offset horizontal: half of image width and text area width */
     }
+}
+
+nav{
+    background-color: #F9F1D9 !important;
+    a{
+        color: #0011ff !important;
+    }
+    .my-4{
+        font-family: "Poppins";
+        src: url(../fonts/Poppins-Regular.ttf);
+        src: url(../fonts/Poppins-Black.ttf);
+        src: url(../fonts/Poppins-Medium.ttf);
+
+    }
+    
 }
