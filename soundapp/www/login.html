@@ -1,40 +1,61 @@
-<form class="p-5">
-    <div class="shadow p-3 mb-5 bg-body-tertiary rounded d-flex flex-column">
-      <p class="text-center fs-1 fw-bold">Login</p>
-      <div class="text-center ">
-        <i class="bi bi-person-circle icono"></i>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
-        <label for="floatingInput">Email address</label>
-      </div>
-      <div class="form-floating">
-        <input type="password" class="form-control" id="userPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
-      </div>
-    </div>  
-    <div class="d-flex justify-content-center">
-      <button type="button" class="Send btn btn-primary bg-black">Submit</button>
-    </div>
-    <div class="my-4 text-center">
-      <p>Are you not registered yet?</p>
-      <a href="">Sign Up!</a>
-    </div>
-  </form>
-  
-    <script>
-      document.querySelector('.Send').addEventListener('click', function(){
-          // Capturar los valores del formulario
-          var userEmail = $('#userEmail').val();
-          var userPassword = $('#userPassword').val();
-  
-  
-          // Construir el objeto con los datos del formulario
-          var formData = {
-              email: userEmail,
-              password: userPassword
-          }
-  
-          login(formData);
-      });
-    </script>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+        <meta name="color-scheme" content="light dark">
+        <link rel="stylesheet" href="public/css/login.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <title>SoundLocator: Login</title>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        <script src="public/js/jquery-3.2.1.min.js"></script>
+
+    </head>
+    <body>
+        <!--Main Content-->
+        <div class="bg-login">
+          <img src="public/img/locate.png" alt="login" class="img-login">
+        </div>
+        <form class="p-5">
+          <!-- <div class="shadow p-3 mb-5 bg-body-tertiary rounded d-flex flex-column">
+          </div> -->
+          <h2 class="title text-center">Welcome to SoundLocator!</h2>
+          <p class="description text-center">Keep your device safe</p>
+          <div class="form-floating mb-3">
+            <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
+            <label for="floatingInput">Email</label>
+          </div>
+          <div class="form-floating">
+            <input type="password" class="form-control" id="userPassword" placeholder="Password">
+            <label for="floatingPassword">Password</label>
+          </div>
+        </div>  
+        <div class="d-flex justify-content-center">
+          <button type="button" class="Send btn btn-primary bg-black">Login</button>
+        </div>
+        <div class="my-4 text-center">
+          <a href="/www/signup.com">Not account yet?</a>
+        </form>
+        
+          <script>
+            document.querySelector('.Send').addEventListener('click', function(){
+                // Capturar los valores del formulario
+                var userEmail = $('#userEmail').val();
+                var userPassword = $('#userPassword').val();
+        
+        
+                // Construir el objeto con los datos del formulario
+                var formData = {
+                    email: userEmail,
+                    password: userPassword
+                }
+        
+                login(formData);
+            });
+          </script>
+    </body>
+</html>
