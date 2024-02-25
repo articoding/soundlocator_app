@@ -36,7 +36,7 @@
         <link rel="stylesheet" href="public/css/mine.css">
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-        <title>Soundapp</title>
+        <title>SoundLocator</title>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
         <script src="public/js/jquery-3.2.1.min.js"></script>
@@ -51,6 +51,9 @@
         <!--End Navbar-->
 
         <!--Main Content-->
+        <div class="login-view">
+          
+        </div>
         <div class="app">
           
         </div>
@@ -58,8 +61,10 @@
         <script src="cordova.js"></script>
         <script src="public/js/index.js"></script>
         <script> // Load the menu partial view
+            //loadPartialView('home/login-view', document.querySelector('.login-view'))
             loadPartialView('Modules/profile_data', document.querySelector('.app'))
             loadPartialView('home/navbar', document.querySelector('nav.nav-init'))
         </script>
+
     </body>
 </html>

@@ -24,6 +24,10 @@
   text-overflow: ellipsis; /* This line truncates text with ellipsis... */
 }
 
+div.bg-primary {
+    background-color: transparent !important;
+    height: 500px !important;
+}
 
 .profile-data{
 
@@ -32,31 +36,35 @@
     src: url(../fonts/Poppins-Black.ttf);
     src: url(../fonts/Poppins-Medium.ttf);
 
-    background-image: url("../img/sophie-back.jpg"); /* Replace with your image path */
+    /* background-image: url("../img/sophie-back.jpg"); Replace with your image path */
     background-repeat: no-repeat; /* Optional: Prevents image tiling */
     background-size: cover; /* Optional: Ensures image fills the background */
     background-color: transparent; /* Remove background color */
     padding: 0; /* Adjust padding if needed */
     background-position-y: -9rem; /* Adjust position of background image */
-  
-
 
     div.bg-white{
         display: flex;
         flex-direction: column;
         align-items: center;
-        background-color: #F9F1D9 !important;
+        background-color: transparent !important;
+        width: 100%;
+
         img{
             position: relative;
             top: -2rem;
-            width: 6rem;
-            height: 6rem;
+            width: 75%;
             object-fit: contain;
             /* object-position: .5rem 5px; */
 
         }
+
         div{
             width: 100%;
+        }
+
+        h2 {
+            font-size: large !important;
         }
     }
 }
@@ -82,10 +90,16 @@
 
 nav{
 
-    background-color: #F9F1D9 !important;
+    background-color: #fff !important;
+
+    li {
+        list-style: none;
+    }
+
     a{
         color: #0011ff !important;
     }
+
     .my-4{
         font-family: "Poppins Semibold";
         font-weight: bolder;
@@ -97,12 +111,12 @@ nav{
 
     .bi-soundwave{
         font-size: 2rem;
-        color: black    ;
+        color: #fed74f    ;
     }
 
     .bi-gear-wide-connected{
         font-size: 2rem;
-        color: black    ;
+        color: #fed74f    ;
     }
 
     .ul{
@@ -111,6 +125,55 @@ nav{
         margin: 0; /* Remove default margin */
     }
 
+    h1 {
+        font-size: x-large !important;
+    }
     
+    .px-2 {
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
+    }
+    
+}
+
+div.login-view {
+
+    background-color: #fff !important;
+    padding: 1rem;
+
+    li {
+        list-style: none;
+    }
+
+    a{
+        color: #0011ff !important;
+    }
+
+    .my-4{
+        font-family: "Poppins Semibold";
+        font-weight: bolder;
+        src: url(../fonts/Poppins-Regular.ttf);
+        src: url(../fonts/Poppins-Black.ttf);
+        src: url(../fonts/Poppins-Medium.ttf);
+
+    }
+    .shadow-sm {
+        box-shadow: none !important;
+    }
+
+    .ul{
+        list-style-type: none; /* Remove bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    h1 {
+        font-size: x-large !important;
+    }
+    
+    .px-2 {
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
+    }
     
 }
