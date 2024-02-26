@@ -169,12 +169,16 @@ div.login-view {
 
     h1 {
         font-size: x-large !important;
+        font-family: "Poppins";
     }
     
     .px-2 {
         padding-right: 0.75rem !important;
         padding-left: 0.75rem !important;
+
     }
+
+    
     
 }
 .p5 {
@@ -199,16 +203,26 @@ div.login-view {
 }
 
 h2 {
+    font-family: "Poppins Semibold";
     font-size: xx-large !important;
+
 }
+
+p {
+    font-family: "Poppins Thin";
+}
+
 
 .form-control {
     background-color: #f4f4f3 !important;
     border-radius: 1.75rem !important;
+    font-family: "Poppins";
 }
+
 
 .form-floating>label {
     padding: 0.4rem .75rem 0rem 1rem !important;
+    font-family: "Poppins";
     font-size: small !important;
     color: #a5a8ab;
 }
@@ -217,6 +231,12 @@ h2 {
     padding: .95rem .75rem .275rem 1rem !important;
 }
 
+.my-4 {
+    font-family: "Poppins Thin";
+    src: url(../fonts/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins-Black.ttf);
+    src: url(../fonts/Poppins-Medium.ttf);
+}
 .justify-content-center {
     margin-top: 2rem !important;
 
@@ -226,6 +246,7 @@ h2 {
         border-radius: 2rem !important;
         background-color: #fed74f !important;
         color: #212529;
+        font-family: "Poppins Thin";
         font-weight: bold;
         border: none;
         width: 100%;
