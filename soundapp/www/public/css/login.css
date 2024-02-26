@@ -231,11 +231,19 @@ p {
     padding: .95rem .75rem .275rem 1rem !important;
 }
 
+a {
+    text-decoration: none !important;
+}
 .my-4 {
     font-family: "Poppins Thin";
     src: url(../fonts/Poppins-Regular.ttf);
     src: url(../fonts/Poppins-Black.ttf);
     src: url(../fonts/Poppins-Medium.ttf);
+
+    span {
+        font-weight: none;
+        color: #fed74f;
+    }
 }
 .justify-content-center {
     margin-top: 2rem !important;
