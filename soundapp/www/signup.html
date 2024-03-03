@@ -6,42 +6,72 @@
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
         <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="public/css/signup.css">
+        <link rel="stylesheet" href="public/css/login.css">
         <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
         <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-        <title>SoundLocator: Sign Up</title>
+        <title>SoundLocator: Login</title>
         <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
         <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
         <script src="public/js/jquery-3.2.1.min.js"></script>
 
     </head>
     <body>
-        <!--Main Content-->
-        <div class="bg-login">
-          <img src="public/img/locate.png" alt="login" class="img-login">
+      <!--Navbar-->
+      <nav class="w-100 nav-init position-sticky top-0 z-3">
+
+      </nav>
+      <!--End Navbar-->
+
+      <!--Main Content-->
+      <div class="carta card mx-auto p-2 shadow p-3 mb-5 bg-body-tertiary rounded">
+        <div class="rounded-circle p-5 ">
+          <img src="Public/img/Furry.jpg" class="furro card-img-top rounded-circle img-fluid" alt="...">
         </div>
-        <form class="p5">
-          <!-- <div class="shadow p-3 mb-5 bg-body-tertiary rounded d-flex flex-column">
-          </div> -->
-          <h2 class="title text-center">Welcome to SoundLocator!</h2>
-          <p class="description text-center">Keep your device safe</p>
-          <div class="form-floating mb-3">
-            <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
-            <label for="floatingInput">Email</label>
+          <div class="card-body text-center">
+            <p class="card-text">Esta es informacion del usuario</p>
+            <p class="Usuario card-text"><span class="fw-bold">User: </span> </p>
+            <p class="Correo card-text"><span class="fw-bold">Email: </span> </p>
+            <p class="Password card-text"><span class="fw-bold">Password: </span> </p>
           </div>
-          <div class="form-floating">
-            <input type="password" class="form-control" id="userPassword" placeholder="Password">
-            <label for="floatingPassword">Password</label>
+      
+          <div class="accordion accordion-flush shadow p-3 mb-5 bg-body-tertiary rounded" id="accordionFlushExample">
+            <div class="accordion-item text-center">
+              <h2 class="accordion-header text-center fw-italic">
+                <button class="accordion-button collapsed text-center" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                  Description
+                </button>
+              </h2>
+              <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                  <p class="Description text-center fst-italic "></p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                  Accordion Item #2
+                </button>
+              </h2>
+              <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                  Accordion Item #3
+                </button>
+              </h2>
+              <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                <div class="accordion-body">
+                </div>
+              </div>
+            </div>
           </div>
-        </div>  
-        <div class="d-flex justify-content-center">
-          <button type="button" class="Send btn btn-primary bg-black">Login</button>
-        </div>
-        <div class="my-4 text-center">
-          <a href="/www/signup.com">Not account yet?</a>
-        </form>
-        
-          <script>
+      </div>
+          <!-- <script>
             document.querySelector('.Send').addEventListener('click', function(){
                 // Capturar los valores del formulario
                 var userEmail = $('#userEmail').val();
@@ -56,6 +86,6 @@
         
                 login(formData);
             });
-          </script>
+          </script> -->
     </body>
 </html>

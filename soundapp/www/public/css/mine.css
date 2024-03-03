@@ -7,7 +7,7 @@
 
 .app{
     width: 100vw;
-    height: 100vh;
+    height: 400px;
     padding: 1rem;
 }
 
@@ -35,6 +35,12 @@ div.bg-primary {
     src: url(../fonts/Poppins-Regular.ttf);
     src: url(../fonts/Poppins-Black.ttf);
     src: url(../fonts/Poppins-Medium.ttf);
+
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.ttf);
+    src: url(../fonts/Montserrat-Black.ttf);
+    src: url(../fonts/Montserrat-Medium.ttf);
+
 
     /* background-image: url("../img/sophie-back.jpg"); Replace with your image path */
     background-repeat: no-repeat; /* Optional: Prevents image tiling */
@@ -64,7 +70,7 @@ div.bg-primary {
         }
 
         h2 {
-            font-size: large !important;
+            font-size: medium !important;
         }
     }
 }
@@ -74,7 +80,7 @@ div.bg-primary {
 .text-dark.custom-color{
     color: #0011ff !important;
     font-weight: bolder;
-
+    font-family: "Montserrat";
     
 }
 
@@ -109,14 +115,9 @@ nav{
 
     }
 
-    .bi-soundwave{
-        font-size: 2rem;
-        color: #fed74f    ;
-    }
-
-    .bi-gear-wide-connected{
-        font-size: 2rem;
-        color: #fed74f    ;
+    .bi{
+        font-size: 1.8rem;
+        color: #000;
     }
 
     .ul{
@@ -130,11 +131,34 @@ nav{
     }
     
     .px-2 {
-        padding-right: 0.75rem !important;
-        padding-left: 0.75rem !important;
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
     }
-    
+
+    .li-container {
+        margin: auto;
+    }
 }
+
+.cont {
+    width: fit-content;
+    margin: auto !important;
+}
+
+.bi-broadcast-pin {
+    font-size: 1.3rem;
+    padding-right: 0.7rem !important;
+    padding-left: 0.7rem !important;
+}
+
+span {
+    font-family: "Montserrat";
+    font-weight: bold !important;
+    font-size: large !important;
+    align-self: center;
+}
+
+
 
 div.login-view {
 
@@ -157,7 +181,7 @@ div.login-view {
         src: url(../fonts/Poppins-Medium.ttf);
 
     }
-    .shadow-sm {
+    .shadow-s{
         box-shadow: none !important;
     }
 

@@ -207,6 +207,16 @@ h2 {
     border-radius: 1.75rem !important;
 }
 
+.form-floating>label {
+    padding: 0.4rem .75rem 0rem 1rem !important;
+    font-size: small !important;
+    color: #a5a8ab;
+}
+
+.form-floating>.form-control {
+    padding: .95rem .75rem .275rem 1rem !important;
+}
+
 .justify-content-center {
     margin-top: 2rem !important;
 

@@ -42,25 +42,23 @@
         <script src="public/js/jquery-3.2.1.min.js"></script>
     </head>
     <body>
-        <!--Navbar-->
-        <nav class="w-100 nav-init position-sticky top-0 z-3">
-
-        </nav>
-        <!--End Navbar-->
-
         <!--Main Content-->
-        <div class="login-view">
-          
-        </div>
+        <!-- <div class="login-view">
+        </div> -->
         <div class="app">
-          
+            
         </div>
         <!--End Main Content-->
+         <!--Navbar-->
+         <nav class="w-100 nav-init position-sticky top-0 z-3">
+
+         </nav>
+         <!--End Navbar-->
         <script src="cordova.js"></script>
         <script src="public/js/index.js"></script>
         <script> // Load the menu partial view
             //loadPartialView('home/login-view', document.querySelector('.login-view'))
-            loadPartialView('Modules/profile_data', document.querySelector('.app'))
+            loadPartialView('Modules/main', document.querySelector('.app'))
             loadPartialView('home/navbar', document.querySelector('nav.nav-init'))
         </script>
 
