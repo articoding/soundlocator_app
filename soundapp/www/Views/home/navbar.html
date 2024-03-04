@@ -2,18 +2,45 @@
     <ul class="px-2 py-3 m-0 d-flex w-100">
         <div class="li-container d-flex">
             <li class="navmenu-button px-2">
-                <i class="bi bi-houses-fill"></i>
+                <i class="Home bi bi-houses-fill"></i>
+            </li>
+            <!-- <li class="navmenu-button px-2">
+                <i class="Menu bi bi-grid-fill"></i>
+            </li> -->
+            <li class="navmenu-button px-2">
+                <i class=" Search bi bi-search"></i>
+            </li>
             </li>
             <li class="navmenu-button px-2">
-                <i class="bi bi-grid-fill"></i>
+                <i class="Account bi bi-person-circle"></i>
             </li>
-            <li class="navmenu-button px-2">
-                <i class="bi bi-search"></i>
-            </li>
-            </li>
-            <li class="navmenu-button px-2">
-                <i class="bi bi-person-circle"></i>
-            </li>
+            <!-- <li class="navmenu-button px-2">
+                <i class="LOgOut bi bi-box-arrow-right fs-3"></i>
+                LogOut
+            </li> -->
         </div>
     </ul>
 </div>
+
+<script>
+    document.querySelector('.Home').addEventListener('click', function(){
+        loadPartialView('login', appRender);
+    })
+
+    document.querySelector('.Home').addEventListener('click', function(){
+        loadPartialView('Modules/Home', appRender);
+    })
+
+    // document.querySelector('.Search').addEventListener('click', function(){
+    //     loadPartialView('Modules/..', appRender);
+    // })
+
+    // document.querySelector('.Menu').addEventListener('click', function(){
+    //     loadPartialView('Modules/..', appRender);
+    // })
+
+    // document.querySelector('.LogOut').addEventListener('click', function(){
+    //     removeLocalStorageValue("id_user");
+    //     loadPartialView("Modules/Login", appRender);
+    // })
+</script>
