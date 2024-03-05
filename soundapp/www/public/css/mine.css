@@ -31,11 +31,6 @@ div.bg-primary {
 
 .profile-data{
 
-    font-family: "Poppins";
-    src: url(../fonts/Poppins-Regular.ttf);
-    src: url(../fonts/Poppins-Black.ttf);
-    src: url(../fonts/Poppins-Medium.ttf);
-
     font-family: "Montserrat";
     src: url(../fonts/Montserrat-Regular.ttf);
     src: url(../fonts/Montserrat-Black.ttf);
@@ -168,7 +163,7 @@ span {
 }
 
 .h2-text-dark {
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: 1.3rem !important;
     font-style: normal !important;
     font-weight: 700;
@@ -176,7 +171,7 @@ span {
 }
 
 .p-text-dark {
-    font-family: Montserrat;
+    font-family: "Montserrat";
     font-size: .9rem !important;
     font-style: normal !important;
     font-weight: 350;
