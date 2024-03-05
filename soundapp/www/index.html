@@ -50,16 +50,19 @@
         </div>
         <!--End Main Content-->
          <!--Navbar-->
-         <nav class="w-100 nav-init position-fixed bottom-0 z-3">
+        <div class="nav">
 
-         </nav>
+        </div>
          <!--End Navbar-->
         <script src="cordova.js"></script>
         <script src="public/js/index.js"></script>
         <script> // Load the menu partial view
+            body = document.querySelector('body');
+            appRender = body.querySelector('.app');
+            navRender = body.querySelector('.nav');
             //loadPartialView('home/login-view', document.querySelector('.login-view'))
-            loadPartialView('Modules/main', document.querySelector('.app'))
-            loadPartialView('home/navbar', document.querySelector('nav.nav-init'))
+            loadPartialView('Modules/main', appRender);
+            loadPartialView('home/navbar', navRender);
         </script>
 
     </body>
