@@ -150,7 +150,7 @@ div.login-view {
     }
 
     .my-4{
-        font-family: "Poppins Semibold";
+        font-family: "Montserrat Semibold";
         font-weight: bolder;
         src: url(../fonts/Poppins-Regular.ttf);
         src: url(../fonts/Poppins-Black.ttf);
@@ -203,26 +203,25 @@ div.login-view {
 }
 
 h2 {
-    font-family: "Poppins Semibold";
-    font-size: xx-large !important;
-
+    font-family: "Montserrat Semibold";
+    font-size: x-large !important;
 }
 
 p {
-    font-family: "Poppins Thin";
+    font-family: "Montserrat";
 }
 
 
 .form-control {
     background-color: #f4f4f3 !important;
     border-radius: 1.75rem !important;
-    font-family: "Poppins";
+    font-family: "Montserrat";
 }
 
 
 .form-floating>label {
     padding: 0.4rem .75rem 0rem 1rem !important;
-    font-family: "Poppins";
+    font-family: "Montserrat";
     font-size: small !important;
     color: #a5a8ab;
 }
@@ -235,14 +234,12 @@ a {
     text-decoration: none !important;
 }
 .my-4 {
-    font-family: "Poppins Thin";
-    src: url(../fonts/Poppins-Regular.ttf);
-    src: url(../fonts/Poppins-Black.ttf);
-    src: url(../fonts/Poppins-Medium.ttf);
+    font-family: "Montserrat";
 
     span {
         font-weight: none;
         color: #fed74f;
+        font-size: 1rem !important;
     }
 }
 .justify-content-center {
@@ -253,9 +250,10 @@ a {
         --bs-btn-padding-y: .7rem;
         border-radius: 2rem !important;
         background-color: #fed74f !important;
-        color: #212529;
-        font-family: "Poppins Thin";
-        font-weight: bold;
+        color: #fff;
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: large !important;
         border: none;
         width: 100%;
     }

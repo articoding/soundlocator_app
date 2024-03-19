@@ -7,7 +7,7 @@
 
 .app{
     width: 100vw;
-    height: 400px;
+    /* height: 400px; */
     padding: 1rem;
 }
 
@@ -198,6 +198,11 @@ span {
     margin: 0 0.4rem 0 0.4rem;
 }
 
+.button-nav {
+    border: none;
+    background-color: transparent;
+}
+
 .signin {
     border: 0.1rem solid #fed74f !important;
     background-color: white !important;
@@ -268,4 +273,132 @@ div.login-view {
         background-color: #c0c0c0 !important;
     }
     
+}
+
+div.search-container {
+    display: grid !important;
+    gap: 0.8rem;
+    margin: 2rem 1rem 0 1rem !important;
+}
+
+.search-bar {
+    width: 100%;
+    border: none;
+    background-color: #f9faf9;
+    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+    border-radius: .4rem;
+}
+
+.bi-search {
+    color: #d9d9d9;
+}
+
+input.search-bar {
+    background-color: transparent;
+    color: #88888c;
+    margin: 0 !important;
+    padding: 0 0.2rem 0 0.1rem !important;
+    font-family: "Montserrat";
+    width: auto;
+
+    &:focus {
+        outline: none !important;
+    }
+}
+
+h5.search-subtitle {
+    margin: 0 !important;
+}
+
+.total-categories-container {
+    max-width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 8rem !important;
+    width: calc(50% - 1rem);
+    margin: 0.5rem;
+    box-sizing: border-box;
+    position: relative;
+}
+
+h5.card-title {
+    color: #212529 !important;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0.5rem; 
+}
+
+.people {
+    background-image: url("../img/people.png");
+    background-repeat: no-repeat;
+}
+
+.animals {
+    background-image: url("../img/animals.png");
+    background-repeat: no-repeat;
+}
+
+.emergency {
+    background-image: url("../img/emergency.png");
+    background-repeat: no-repeat;
+}
+
+.foley {
+    background-image: url("../img/foley.png");
+    background-repeat: no-repeat;
+}
+
+.ambience {
+    background-image: url("../img/ambience.png");
+    background-repeat: no-repeat;
+}
+
+.cartoons {
+    background-image: url("../img/cartoons.png");
+    background-repeat: no-repeat;
+}
+
+
+.categories-container {
+    padding: 3rem 1.3rem 1.3rem 1.3rem !important;
+    max-width: 100% !important;
+    display: flex;
+    flex-wrap: wrap;
+
+    .people-sounds {
+        width: 100%;
+        max-width: 900px;
+        padding: .5rem;
+    
+        .music {
+            padding: 1rem;
+            box-shadow: 0 0 20px rgba(red, 0, 0, 0.4);
+            background: #fff;
+            color: #555;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+            
+        .track {
+                display: flex;
+                align-items: center;
+                margin-top: 20px;
+        }
+            
+        .track img {
+                width: 50px;
+                margin-right: 15px;
+                cursor: pointer;
+        }
+            
+        .track div {
+                flex: 1;
+        }
+    
+    }
+  
 }

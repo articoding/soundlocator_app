@@ -1,0 +1,72 @@
+<div class="categories-container">
+    <div class="class-search-container">
+        <h5 class="search-subtitle">Ambience Sounds</h5>
+    </div>
+
+    <div class="class-container">
+        <p class="search-subtitle">Relaxing or chaotic, nature or urban life, explore our sound library of ambience sounds.</p>
+    </div>
+    <div class="search-bar">
+        <i class="search bi bi-search"></i>
+        <input class="search-bar" placeholder="Search sounds"></input>
+    </div>
+        
+    <div class="people-sounds container">
+        <div class="music">
+            <p class="soundName">Loading...</p>
+            <div class="track">
+              <img src="../../www/public/img/play.png" class="playBtn">
+              <div class="waveform"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var playBtns = document.querySelectorAll('.playBtn');
+        var soundNames = document.querySelectorAll('.soundName');
+  
+        // Replace with your Freesound API key
+        var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
+  
+        // Array of sound IDs to fetch
+        var soundIds = ['33511', '33512', '33513', '33514', '33515'];
+  
+        soundIds.forEach(function(soundId, index) {
+          var musicContainer = document.querySelectorAll('.music-container')[index];
+          
+          $.getJSON('https://freesound.org/apiv2/sounds/' + soundId + '/similar/?token=' + apiKey, function(similarData) {
+            // Choose the first similar sound from the list
+            var similarSoundId = similarData.results[1].id;
+  
+            $.getJSON('https://freesound.org/apiv2/sounds/' + similarSoundId + '/?token=' + apiKey, function(data) {
+              soundNames[index].textContent = data.name;
+  
+              const wavesurfer = WaveSurfer.create({
+                container: musicContainer.querySelector('.waveform'),
+                waveColor: '#ddd',
+                progressColor: '#ff006c',
+                barWidth: 4,
+                responsive: true,
+                height: 90,
+                barRadius: 4,
+                url: data.previews['preview-hq-mp3'], 
+              });
+              wavesurfer.load();
+              playBtns[index].onclick = function() {
+                wavesurfer.playPause();
+                if (wavesurfer.isPlaying()) {
+                  playBtns[index].src = 'www/public/img/pause.png';
+                } else {
+                  playBtns[index].src = 'www/public/img/play.png';
+                }
+              }
+              wavesurfer.on('finish', function() {
+                playBtns[index].src = 'www/public/img/play.png';
+                wavesurfer.stop();
+              });
+            });
+          });
+        });
+  
+      </script>
+  
+</div>

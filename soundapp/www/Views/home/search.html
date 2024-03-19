@@ -1,41 +1,67 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="public/css/mine.css">
-        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
-        <title>Soundapp</title>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
-        <script src="public/js/jquery-3.2.1.min.js"></script>
-    </head>
-    <body>
-        <!--Main Content-->
-        <!-- <div class="login-view">
-        </div> -->
-        <div class="search">
-            
-        </div>
-        <div class="categories">
-            
-        </div>
-        <!--End Main Content-->
-         <!--Navbar-->
-         <nav class="w-100 nav-init position-fixed bottom-0 z-3">
 
-         </nav>
-         <!--End Navbar-->
-        <script src="cordova.js"></script>
-        <script src="public/js/index.js"></script>
-        <script> // Load the menu partial view
-            loadPartialView('home/categories', document.querySelector('.categories'))
-            loadPartialView('home/navbar', document.querySelector('nav.nav-init'))
-        </script>
+<div class="search-container">
+    <div class="search-bar">
+        <i class="search bi bi-search"></i>
+        <input class="search-bar" placeholder="Search sounds"></input>
+    </div>
+    
+    <div class="class-search-container">
+        <h5 class="search-subtitle">Browse Categories</h5>
+    </div>
+    
+<div class="total-categories-container">
+    <button class="card people">
+        <div class="bg-people">
+            <h5 class="card-title">People</h5>
+        </div>
+    </button>
+    <button class="card ambience">
+        <div class="bg-people">
+            <h5 class="card-title">Ambience</h5>
+        </div>
+        </button>
+    <button class="card animals">
+        <div class="bg-animals">
+            <h5 class="card-title">Animals</h5>
+        </div>
+    </button>
+    <button class="card cartoons">
+        <div class="bg-cartoons">
+            <h5 class="card-title">Cartoons</h5>
+        </div>
+    </button>
+    <button class="card emergency">
+        <div class="bg-emergency">
+            <h5 class="card-title">Emergency</h5>
+        </div>
+    </button>
+    <button class="card foley">
+        <div class="bg-foley">
+            <h5 class="card-title">Foley</h5>
+        </div>
+    </button>
+    <button class="card horror">
+        <div class="bg-horror">
+            <h5 class="card-title">Horror</h5>
+        </div>
+    </button>
+    <button class="card -tech">
+        <div class="bg-tech">
+            <h5 class="card-title">Tech</h5>
+        </div>
+    </button>    
+</div>
 
-    </body>
-</html>
+<script>
+    document.querySelector('.people').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/people-cat', appRender);
+    })
+
+    document.querySelector('.search').addEventListener('click', function(){
+        loadPartialView('/home/search', appRender);
+    })
+
+    document.querySelector('.account').addEventListener('click', function(){
+        loadPartialView('/user/profile', appRender);
+    })
+</script>
