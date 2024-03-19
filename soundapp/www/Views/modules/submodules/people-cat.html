@@ -13,14 +13,29 @@
         
     <div class="people-sounds container">
         <div class="music">
+          <div class="id">
             <p class="soundName">Loading...</p>
-            <div class="track">
-              <img src="../../www/public/img/play.png" class="playBtn">
-              <div class="waveform"></div>
-            </div>
+          <div class="img-btn">
+            <img src="../../www/public/img/play.png" class="playBtn">
+            <img src="../../www/public/img/download.png" class="dwldBtn">
+          </div>
+          </div>
+          <div class="track">
+            <div class="waveform"></div>
+          </div>
         </div>
     </div>
+  </div>
     <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          var musicContainer = document.querySelector('.music');
+          var newSound = musicContainer.cloneNode(true);
+
+          var container = document.querySelector('.people-sounds');
+          container.appendChild(musicContainer);
+
+      })
+      
         var playBtns = document.querySelectorAll('.playBtn');
         var soundNames = document.querySelectorAll('.soundName');
   
@@ -28,10 +43,10 @@
         var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
   
         // Array of sound IDs to fetch
-        var soundIds = ['33511', '33512', '33513', '33514', '33515'];
+        var soundIds = ['33511', '33515', '33513', '33514', '33515'];
   
         soundIds.forEach(function(soundId, index) {
-          var musicContainer = document.querySelectorAll('.music-container')[index];
+          var musicContainer = document.querySelectorAll('.track')[index];
           
           $.getJSON('https://freesound.org/apiv2/sounds/' + soundId + '/similar/?token=' + apiKey, function(similarData) {
             // Choose the first similar sound from the list
@@ -42,11 +57,13 @@
   
               const wavesurfer = WaveSurfer.create({
                 container: musicContainer.querySelector('.waveform'),
-                waveColor: '#ddd',
-                progressColor: '#ff006c',
+                waveColor: '#fcedb8',
+                progressColor: '#fed74f',
+                cursorColor: '#000',
                 barWidth: 4,
+                barHeight: 20,
                 responsive: true,
-                height: 90,
+                height: 30,
                 barRadius: 4,
                 url: data.previews['preview-hq-mp3'], 
               });
@@ -54,19 +71,18 @@
               playBtns[index].onclick = function() {
                 wavesurfer.playPause();
                 if (wavesurfer.isPlaying()) {
-                  playBtns[index].src = 'www/public/img/pause.png';
+                  playBtns[index].src = 'public/img/pause.png';
                 } else {
-                  playBtns[index].src = 'www/public/img/play.png';
+                  playBtns[index].src = 'public/img/play.png';
                 }
               }
               wavesurfer.on('finish', function() {
-                playBtns[index].src = 'www/public/img/play.png';
+                playBtns[index].src = 'public/img/play.png';
                 wavesurfer.stop();
               });
             });
           });
         });
-  
+
       </script>
-  
 </div>
