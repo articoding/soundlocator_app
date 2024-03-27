@@ -87,7 +87,6 @@ div.bg-primary {
 }
 
 nav{
-
     background-color: #fff !important;
 
     li {
@@ -278,7 +277,7 @@ div.login-view {
 div.search-container {
     display: grid !important;
     gap: 0.8rem;
-    margin: 2rem 1rem 0 1rem !important;
+    margin: 3rem 1rem 0 1rem !important;
 }
 
 .search-bar {
@@ -308,6 +307,7 @@ input.search-bar {
 
 h5.search-subtitle {
     margin-bottom: 0.8rem !important;
+    margin-top: 0.6rem !important;
 }
 
 .total-categories-container {
@@ -316,8 +316,12 @@ h5.search-subtitle {
     flex-wrap: wrap;
 }
 
+.total-categories-container:nth-last-child(-n+2) {
+    margin-bottom: 4rem;
+}
+
 .card {
-    height: 8rem !important;
+    height: 9rem !important;
     width: calc(50% - 1rem);
     margin: 0.5rem;
     box-sizing: border-box;
@@ -362,27 +366,44 @@ h5.card-title {
     background-repeat: no-repeat;
 }
 
+.tech {
+    background-image: url("../img/tech.png");
+    background-repeat: no-repeat;
+}
+
+.horror {
+    background-image: url("../img/horror.png");
+    background-repeat: no-repeat;
+}
+
 
 .categories-container {
     padding: 3rem 1.3rem 1.3rem 1.3rem !important;
     max-width: 100% !important;
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-wrap: wrap; */
 
     .container {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
 
-    .people-sounds {
+    .sounds {
         margin-top: 2rem !important;
-        border:#d9d9d9 solid 1px;
-        border-radius: 0.5rem;
-        width: 100%;
-        max-width: 900px;
+        .music {
+            border:#d9d9d9 solid 1px;
+            border-radius: 0.5rem;
+            width: 100%;
+            margin-bottom: 1rem !important;
+
+            &:last-child {
+                margin-bottom: 3rem !important;
+            }
+        }
     
         .id {
-            display: flex;
+            display: grid;
+            grid-template-columns: 3fr 1fr;
             align-items: center;
             padding: 1rem;
             box-shadow: 0 0 20px rgba(red, 0, 0, 0.4);
@@ -394,8 +415,11 @@ h5.card-title {
                 font-weight: bold;
                 color: #212529;
                 font-size: 0.9rem;
-                width: 70%;
+                max-width: 70%;
                 margin-bottom: 0 !important;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
             }
         }
             
@@ -406,8 +430,7 @@ h5.card-title {
         
         .img-btn {
             width: auto;
-            position: absolute;
-            right: 3rem;
+            justify-self: end;
 
             .playBtn {
                 width: 2rem;

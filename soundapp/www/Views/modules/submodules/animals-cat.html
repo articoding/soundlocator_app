@@ -1,10 +1,10 @@
 <div class="categories-container">
     <div class="class-search-container">
-        <h5 class="search-subtitle">Sonidos de Personas</h5>
+        <h5 class="search-subtitle">Sonidos de Animales </h5>
     </div>
 
     <div class="class-container">
-        <p class="search-subtitle">Desde conversaciones animadas hasta murmullos de fondo, descubre sonidos que capturan la esencia humana.</p>
+        <p class="search-subtitle">Sumérgete en la naturaleza salvaje y el reino animal con sonidos que te transportarán a la selva, la granja o el zoológico.</p>
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
@@ -12,7 +12,18 @@
     </div>
         
     <div class="sounds container">
-        
+        <!-- <div class="music">
+          <div class="id">
+            <p class="soundName">Loading...</p>
+          <div class="img-btn">
+            <img src="../../www/public/img/play.png" class="playBtn">
+            <img src="../../www/public/img/download.png" class="dwldBtn">
+          </div>
+          </div>
+          <div class="track">
+            <div class="waveform"></div>
+          </div>
+        </div> -->
     </div>
   </div>
     <script>
@@ -22,12 +33,12 @@
     //     var container = document.querySelector('.people-sounds');
     //     container.appendChild(musicContainer);
     // })
-    
+
     // Variables
     var playBtns = [];
     var soundNames = [];
     var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
-    var category = 'people';
+    var category = 'animals';
 
     // Crear la URL de búsqueda
     var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + category + '&token=' + apiKey;
@@ -37,7 +48,7 @@
         // Verificar si se encontraron resultados
         if (searchData.results && searchData.results.length > 0) {
             // Obtener el contenedor .people-sounds.container
-            var SoundsContainer = document.querySelector('.sounds.container');
+            var peopleSoundsContainer = document.querySelector('.sounds.container');
 
             // Iterar sobre los resultados
             searchData.results.forEach(function(result, index) {
@@ -82,8 +93,8 @@
                 musicContainer.appendChild(idContainer);
                 musicContainer.appendChild(trackContainer);
 
-                // Agregar el contenedor .music al contenedor .sounds.container
-                SoundsContainer.appendChild(musicContainer);
+                // Agregar el contenedor .music al contenedor .people-sounds.container
+                peopleSoundsContainer.appendChild(musicContainer);
 
                 // Guardar las referencias a los botones de reproducción y nombres de sonido
                 playBtns.push(playBtn);
@@ -137,7 +148,7 @@
                     });
                 })
             });
-          }
+        }
         });
 
       </script>

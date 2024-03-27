@@ -1,10 +1,10 @@
 <div class="categories-container">
     <div class="class-search-container">
-        <h5 class="search-subtitle">Sonidos de Personas</h5>
+        <h5 class="search-subtitle">Sonidos Foley</h5>
     </div>
 
     <div class="class-container">
-        <p class="search-subtitle">Desde conversaciones animadas hasta murmullos de fondo, descubre sonidos que capturan la esencia humana.</p>
+        <p class="search-subtitle">Desde pasos hasta puertas cerrándose, descubre sonidos que añaden realismo a las escenas de películas y series.</p>
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
@@ -12,7 +12,7 @@
     </div>
         
     <div class="sounds container">
-        
+
     </div>
   </div>
     <script>
@@ -27,7 +27,7 @@
     var playBtns = [];
     var soundNames = [];
     var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
-    var category = 'people';
+    var category = 'foley';
 
     // Crear la URL de búsqueda
     var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + category + '&token=' + apiKey;
@@ -37,7 +37,7 @@
         // Verificar si se encontraron resultados
         if (searchData.results && searchData.results.length > 0) {
             // Obtener el contenedor .people-sounds.container
-            var SoundsContainer = document.querySelector('.sounds.container');
+            var peopleSoundsContainer = document.querySelector('.sounds.container');
 
             // Iterar sobre los resultados
             searchData.results.forEach(function(result, index) {
@@ -83,7 +83,7 @@
                 musicContainer.appendChild(trackContainer);
 
                 // Agregar el contenedor .music al contenedor .sounds.container
-                SoundsContainer.appendChild(musicContainer);
+                peopleSoundsContainer.appendChild(musicContainer);
 
                 // Guardar las referencias a los botones de reproducción y nombres de sonido
                 playBtns.push(playBtn);

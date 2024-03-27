@@ -41,10 +41,11 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <link rel="icon" type="image/png" href="public/img/broadcast-pin.png">
         <title>Soundapp</title>
-        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="https://unpkg.com/wavesurfer.js@7"></script>
-        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
         <script src="public/js/jquery-3.2.1.min.js"></script>
+        <script src="https://unpkg.com/wavesurfer.js@7"></script>
+        <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+        
     </head>
     <body>
         <!--Main Content-->
@@ -55,7 +56,7 @@
         </div>
         <!--End Main Content-->
          <!--Navbar-->
-        <div class="nav">
+        <div class="nav position-fixed bottom-0 w-100 z-3">
 
         </div>
          <!--End Navbar-->
@@ -69,6 +70,5 @@
             loadPartialView('Modules/main', appRender);
             loadPartialView('home/navbar', navRender);
         </script>
-
     </body>
 </html>

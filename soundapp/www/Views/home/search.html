@@ -2,11 +2,11 @@
 <div class="search-container">
     <div class="search-bar">
         <i class="search bi bi-search"></i>
-        <input class="search-bar" placeholder="Search sounds"></input>
+        <input class="search-bar" placeholder="Busca un sonido"></input>
     </div>
     
     <div class="class-search-container">
-        <h5 class="search-subtitle">Browse Categories</h5>
+        <h5 class="search-subtitle">Busca una categoría</h5>
     </div>
     
 <div class="total-categories-container">
@@ -45,7 +45,7 @@
             <h5 class="card-title">Horror</h5>
         </div>
     </button>
-    <button class="card -tech">
+    <button class="card tech">
         <div class="bg-tech">
             <h5 class="card-title">Tech</h5>
         </div>
@@ -55,6 +55,34 @@
 <script>
     document.querySelector('.people').addEventListener('click', function(){
         loadPartialView('/modules/submodules/people-cat', appRender);
+    })
+
+    document.querySelector('.ambience').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/ambience-cat', appRender);
+    })
+
+    document.querySelector('.animals').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/animals-cat', appRender);
+    })
+
+    document.querySelector('.cartoons').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/cartoons-cat', appRender);
+    })
+
+    document.querySelector('.emergency').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/emergency-cat', appRender);
+    })
+
+    document.querySelector('.foley').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/foley-cat', appRender);
+    })
+
+    document.querySelector('.horror').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/horror-cat', appRender);
+    })
+
+    document.querySelector('.tech').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/tech-cat', appRender);
     })
 
     document.querySelector('.search').addEventListener('click', function(){
