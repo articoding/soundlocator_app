@@ -277,7 +277,13 @@ div.login-view {
 div.search-container {
     display: grid !important;
     gap: 0.8rem;
-    margin: 3rem 1rem 0 1rem !important;
+    margin: 2rem 1rem 0rem 1rem !important;
+}
+
+div.home-main-container {
+    display: grid !important;
+    gap: 0.8rem;
+    margin: 4rem 1rem 3rem 1rem !important;;
 }
 
 .search-bar {
@@ -305,31 +311,44 @@ input.search-bar {
     }
 }
 
-h5.search-subtitle {
+h4.search-subtitle {
     margin-bottom: 0.8rem !important;
     margin-top: 0.6rem !important;
+    font-size: x-large;
 }
 
 .total-categories-container {
     max-width: 100% !important;
     display: flex;
     flex-wrap: wrap;
+
+    .card:nth-child(odd) {
+        margin-left: 0;
+        margin-right: 0.5rem;
+    }
+    
+    .card:nth-child(even) {
+        margin-left: 0.5rem;
+        margin-right: 0;
+    }
 }
+
 
 .total-categories-container:nth-last-child(-n+2) {
     margin-bottom: 4rem;
 }
 
 .card {
-    height: 9rem !important;
-    width: calc(50% - 1rem);
-    margin: 0.5rem;
+    height: 7rem !important;
+    width: calc(50% - 0.5rem);
+    margin: 0.5rem 0 0.5rem 0;
     box-sizing: border-box;
     position: relative;
 }
 
 h5.card-title {
     color: #212529 !important;
+    font-weight: 600;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -337,45 +356,90 @@ h5.card-title {
 }
 
 .people {
-    background-image: url("../img/people.png");
+    background-color: #fed74f !important;
+    background-image: url("../img/Categories-Icons_People.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-repeat: no-repeat; */
 }
 
 .animals {
-    background-image: url("../img/animals.png");
+    background-color: #3ec5f4 !important;
+    background-image: url("../img/Categories-Icons_Animals.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("../img/animals.png"); */
+    /* background-repeat: no-repeat; */
 }
 
 .emergency {
-    background-image: url("../img/emergency.png");
+    background-color: #d1000b !important;
+    background-image: url("../img/Categories-Icons_Emergency.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("../img/emergency.png"); */
+    /* background-repeat: no-repeat; */
+    h5.card-title {
+        color: #fff !important;
+    }
 }
 
 .foley {
-    background-image: url("../img/foley.png");
+    background-color: #f0f1f1 !important;
+    background-image: url("../img/Categories-Icons_Foley.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("../img/foley.png"); */
+    /* background-repeat: no-repeat; */
 }
 
 .ambience {
-    background-image: url("../img/ambience.png");
+    background-color: #fefa00 !important;
+    background-image: url("../img/Categories-Icons_Ambience.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("../img/ambience.png"); */
+    /* background-repeat: no-repeat; */
 }
 
 .cartoons {
-    background-image: url("../img/cartoons.png");
+    background-color: #00d100 !important;
+    background-image: url("../img/Categories-Icons_Cartoons.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("../img/cartoons.png"); */
+    /* background-repeat: no-repeat; */
 }
 
 .tech {
-    background-image: url("../img/tech.png");
+    background-color: #fed74f !important;
+    background-image: url("../img/Categories-Icons_Tech.png");
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
+    /* background-image: url("../img/tech.png"); */
+    /* background-repeat: no-repeat; */
 }
 
 .horror {
-    background-image: url("../img/horror.png");
+    background-color: #000 !important;
+    background-image: url("../img/Categories-Icons_Horror.png");
+    background-size: cover;
     background-repeat: no-repeat;
-}
+    background-position: center;
 
+    h5.card-title {
+        color: #fff !important;
+    }
+    /* background-image: url("../img/horror.png"); */
+   /* background-repeat: no-repeat; */
+}
 
 .categories-container {
     padding: 3rem 1.3rem 1.3rem 1.3rem !important;
@@ -414,7 +478,7 @@ h5.card-title {
             .soundName {
                 font-weight: bold;
                 color: #212529;
-                font-size: 0.9rem;
+                font-size: 1rem;
                 max-width: 70%;
                 margin-bottom: 0 !important;
                 overflow: hidden;
@@ -444,3 +508,82 @@ h5.card-title {
         }
     }
 }
+
+.home-title {
+    font-size: 2rem !important;
+    font-weight: 700;
+    text-align: center;
+
+    .icon {
+        font-size: 2rem;
+    }
+}
+
+h5.home-subtitle {
+    font-size: 1.75rem !important;
+    font-weight: 600;
+}
+
+.home2-subtitle {
+    font-size: 1.2rem;
+}
+
+
+
+div.bg-entertainment {
+    margin: 0.5rem 0 0.5rem 0;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    width: 100%;
+    height: 20rem;
+    border-radius: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("../img/entertainment.png") !important;
+    h5.card2-title {
+        color: #212529 !important;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin: 0.5rem; 
+    }
+}
+
+div.card3 {
+    display: inline-block;
+    width: calc(51.5% - 1rem);
+    margin: 0.5rem;
+    box-sizing: border-box;
+    position: relative;
+    border: none;
+    border-radius: 1rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div.card3 .bg-cartoons2,
+div.card3 .bg-films {
+    margin: 0.5rem 0 0.5rem 0;
+    width: 100%;
+    height: 10rem;
+    border-radius: 1rem;
+}
+
+.card-cartoon {
+    margin-left: 0 !important;
+}
+
+.card-film {
+    margin-right: 0 !important;
+}
+
+div.card3 .bg-cartoons2 {
+    background-image: url("../img/cartoons2.png");
+
+}
+
+div.card3 .bg-films {
+    background-image: url("../img/films.png");
+}
+

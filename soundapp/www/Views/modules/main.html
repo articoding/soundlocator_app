@@ -1,0 +1,47 @@
+<div class="home-main-container">
+    <div class="class-home-container">
+        <h2 class="home-title">
+            <i class="icon bi bi-broadcast-pin"></i>Soundapp</h2>
+        <h5 class="home-subtitle">Home</h5>
+    </div>
+    <div class="class-container">
+        <p class="home2-subtitle">Descubre nuestro catálogo de efectos de sonido libres de derechos, ¡sólo para ti!</p>
+    </div>
+    
+<div class="home-container">
+    <div class="card2">
+        <div class="bg-entertainment" >
+        </div>
+        <h5 class="card2-title">Entretenimiento</h5>
+    </div>
+
+    <div class="card3 card-cartoon">
+        <div class="bg-cartoons2">
+        </div>
+        <h5 class="card2-title">Cartoons</h5>
+    </div> 
+
+    <div class="card3 card-film">
+        <div class="bg-films">
+        </div>
+        <h5 class="card2-title">Films</h5>
+    </div>
+</div>
+
+<script>
+    // document.querySelector('.people').addEventListener('click', function(){
+    //     loadPartialView('/modules/submodules/people-cat', appRender);
+    // })
+
+    // document.querySelector('.ambience').addEventListener('click', function(){
+    //     loadPartialView('/modules/submodules/ambience-cat', appRender);
+    // })
+
+    document.querySelector('.search').addEventListener('click', function(){
+        loadPartialView('/home/search', appRender);
+    })
+
+    document.querySelector('.account').addEventListener('click', function(){
+        loadPartialView('/user/profile', appRender);
+    })
+</script>
