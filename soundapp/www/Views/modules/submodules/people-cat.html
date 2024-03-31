@@ -1,4 +1,5 @@
 <div class="categories-container">
+    <!-- <button id="backButton"><i class="bi bi-chevron-left"></i></button> -->
     <div class="class-search-container">
         <h5 class="search-subtitle">Sonidos de Personas</h5>
     </div>
@@ -9,6 +10,8 @@
     <div class="search-bar">
         <i class="search bi bi-search"></i>
         <input class="search-bar" placeholder="Busca un sonido"></input>
+    </div>
+    <div class="counting-container">
     </div>
         
     <div class="sounds container">
@@ -22,15 +25,19 @@
     //     var container = document.querySelector('.people-sounds');
     //     container.appendChild(musicContainer);
     // })
-    
+    // document.getElementById("backButton").addEventListener("click", function() {
+    //     window.history.back();
+    // });
+
     // Variables
     var playBtns = [];
     var soundNames = [];
     var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
     var category = 'people';
+    var numResults = 50;
 
-    // Crear la URL de búsqueda
-    var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + category + '&token=' + apiKey;
+    // Crear la URL de búsqueda con el parámetro results
+    var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + category + '&token=' + apiKey + '&results=' + numResults;
 
     // Realizar la solicitud GET para buscar sonidos basados en la categoría
     $.getJSON(searchURL, function(searchData) {
@@ -135,10 +142,19 @@
                         playBtns[index].src = '../../www/public/img/play.png';
                         wavesurfer.stop();
                     });
+                    countAndDisplay();
                 })
             });
           }
         });
 
+        function countAndDisplay() {
+            var count = $('.sounds.container .music').length;
+            var countElement = $('<p class="counting"></p>');
+            countElement.text('Se han encontrado ' + count + ' sonidos');
+            $('.counting-container').empty();
+            $('.counting-container').append(countElement);
+        }
+        
       </script>
 </div>

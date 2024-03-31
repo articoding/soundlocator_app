@@ -10,6 +10,8 @@
         <i class="search bi bi-search"></i>
         <input class="search-bar" placeholder="Busca un sonido"></input>
     </div>
+    <div class="counting-container">
+    </div>
         
     <div class="sounds container">
 
@@ -135,10 +137,19 @@
                         playBtns[index].src = '../../www/public/img/play.png';
                         wavesurfer.stop();
                     });
+                    countAndDisplay();
                 })
             });
           }
         });
 
+        
+        function countAndDisplay() {
+            var count = $('.sounds.container .music').length;
+            var countElement = $('<p class="counting"></p>');
+            countElement.text('Se han encontrado ' + count + ' sonidos');
+            $('.counting-container').empty();
+            $('.counting-container').append(countElement);
+        }
       </script>
 </div>
