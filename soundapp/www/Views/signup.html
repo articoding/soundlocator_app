@@ -38,11 +38,15 @@
           <button type="button" class="Send btn btn-primary bg-black">Iniciar Sesión</button>
         </div>
         <div class="my-4 text-center">
-          ¿No tienes una cuenta aún? <span>Regístrate</span>
+          <p>¿Y tienes una cuenta con nosotros?</p> <p><span class="LI">Inicia Sesion!</span></p>
         </div>
         </form>
         
           <script>
+            document.querySelector('.LI').addEventListener('click', function(){
+              loadPartialView('login', appRender);
+            });
+
             document.querySelector('.Send').addEventListener('click', function(){
                 // Capturar los valores del formulario
                 var userEmail = $('#userEmail').val();

@@ -38,7 +38,8 @@
           <button type="button" class="Send btn btn-primary bg-black">Iniciar Sesión</button>
         </div>
         <div class="my-4 text-center">
-          <a href="/../www/signup.html">¿No tienes una cuenta aún? <span>Regístrate</span></a>
+          <p>¿No tienes una cuenta aún?</p>
+          <p><span class="su">Registrate!</span></p>
         </div>
         </form>
         
@@ -57,6 +58,10 @@
         
                 login(formData);
             });
-          </script>
+
+            document.querySelector('.su').addEventListener('click', function(){
+              loadPartialView('signup', appRender);
+            }); 
+           </script>
     </body>
-</html>
+</html>           
