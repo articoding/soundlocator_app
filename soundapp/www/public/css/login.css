@@ -216,18 +216,22 @@ p {
     background-color: #f4f4f3 !important;
     border-radius: 1.75rem !important;
     font-family: "Montserrat";
+    font-size: 0.86rem !important;
+    height: 3rem !important;
+    min-height: 2.75rem !important;
+    line-height: 1.25rem !important;
 }
 
 
 .form-floating>label {
-    padding: 0.4rem .75rem 0rem 1rem !important;
+    padding: 0.3rem .75rem 0rem 1rem !important;
     font-family: "Montserrat";
-    font-size: small !important;
+    font-size: 0.75rem !important;
     color: #a5a8ab;
 }
 
 .form-floating>.form-control {
-    padding: .95rem .75rem .275rem 1rem !important;
+    padding: 1.2rem .75rem .27rem 1rem !important;
 }
 
 a {
@@ -243,7 +247,7 @@ a {
     }
 }
 .justify-content-center {
-    margin-top: 2rem !important;
+    margin-top: 1.2rem !important;
 
     .btn {
         --bs-btn-padding-x: 2rem;
@@ -261,4 +265,16 @@ a {
 
 a {
     color: #212529 !important;
+}
+
+.btn-viewpassword {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent !important;
+    font-size: 1.3rem !important;
+    margin-right: 0.5 !important;
+    color: #c6cbcf !important;
 }

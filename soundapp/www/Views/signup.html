@@ -25,26 +25,60 @@
           </div> -->
           <h2 class="title text-center">Únete a SoundApp</h2>
           <p class="description text-center">Sound Effects solo para ti</p>
-          <div class="form-floating mb-3">
+          <div class="form-floating mb-2">
+            <label for="floatingInput">Nombre(s)</label>
+            <input class="form-control" id="userName">
+          </div>
+          <div class="form-floating mb-2">
+            <label for="floatingInput">Apellido(s)</label>
+            <input class="form-control" id="userLastname">
+          </div>
+          <div class="form-floating mb-2">
             <label for="floatingInput">Correo electrónico</label>
             <input type="email" class="form-control" id="userEmail" placeholder="name@example.com">
           </div>
           <div class="form-floating">
             <label for="floatingInput">Contraseña</label>
             <input type="password" class="form-control" id="userPassword" placeholder="Password">
+            <button type="button" class="btn btn-viewpassword" id="togglePassword">
+              <i class="bi bi-eye-fill"></i>
+              <i class="bi bi-eye-slash-fill" style="display:none;"></i>
+            </button>
           </div>
         </div>  
         <div class="d-flex justify-content-center">
-          <button type="button" class="Send btn btn-primary bg-black">Iniciar Sesión</button>
+          <button type="button" class="Send btn btn-primary bg-black">Registrarse</button>
         </div>
         <div class="my-4 text-center">
-          <p>¿Y tienes una cuenta con nosotros?</p> <p><span class="LI">Inicia Sesion!</span></p>
+          <p class="label-login">¿Ya tienes una cuenta con nosotros?</p> <p><span class="LI">¡Inicia Sesión!</span></p>
         </div>
         </form>
         
           <script>
             document.querySelector('.LI').addEventListener('click', function(){
               loadPartialView('login', appRender);
+            });
+
+            $(document).ready(function() {
+              $('#togglePassword').click(function(){
+                  // Obtener el input de contraseña
+                  var passwordField = $('#userPassword');
+
+                  // Obtener el ícono del ojo y el ojo tachado
+                  var eye = $(this).find('.bi-eye-fill');
+                  var eyeSlash = $(this).find('.bi-eye-slash-fill');
+
+                  // Cambiar el tipo de input de contraseña
+                  if (passwordField.attr('type') === 'password') {
+                      passwordField.attr('type', 'text');
+                      eye.hide();
+                      eyeSlash.show();
+                  } else {
+                      passwordField.attr('type', 'password');
+                      eye.show();
+                      eyeSlash.hide();
+                  }
+              });
             });
 
             document.querySelector('.Send').addEventListener('click', function(){

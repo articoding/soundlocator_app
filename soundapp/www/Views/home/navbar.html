@@ -16,7 +16,7 @@
                 <i class="Menu bi bi-grid-fill"></i>
             </li> -->
             <!-- <li class="navmenu-button px-2">
-                <i class="LOgOut bi bi-box-arrow-right fs-3"></i>
+                <i class="LogOut bi bi-box-arrow-right fs-3"></i>
                 LogOut
             </li> -->
         </div>
@@ -27,16 +27,16 @@
 <script>
     document.querySelector('.main').addEventListener('click', function(){
         loadPartialView('/modules/main', appRender);
-    })
+    });
 
     document.querySelector('.search').addEventListener('click', function(){
         loadPartialView('/home/search', appRender);
-    })
+    });
 
     document.querySelector('.account').addEventListener('click', function(){
         loadPartialView('/user/account', appRender);
-    })
-
+    });
+    
     // document.querySelector('.LogOut').addEventListener('click', function(){
     //     removeLocalStorageValue("id_user");
     //     loadPartialView("Modules/Login", appRender);
