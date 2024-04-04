@@ -5,7 +5,7 @@
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
-        <input class="search-bar" placeholder="Busca un sonido"></input>
+        <input class="search-bar" placeholder="Busca un sonido" id="searchInput"></input>
     </div>
 
 <div class="total-categories-container">
@@ -84,6 +84,10 @@
         loadPartialView('/modules/submodules/tech-cat', appRender);
     })
 
+    document.querySelector('.search-bar').addEventListener('click', function(){
+        loadPartialView('/modules/submodules/search-bar', appRender);
+    })
+    
     document.querySelector('.search').addEventListener('click', function(){
         loadPartialView('/home/search', appRender);
     })

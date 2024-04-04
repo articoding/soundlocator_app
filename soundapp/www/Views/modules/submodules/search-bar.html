@@ -1,0 +1,139 @@
+<div class="search-container">
+    <div class="class-search-container">
+        <h4 class="search-subtitle">Busca el sonido de tu vida</h4>
+    </div>
+    <div class="search-bar">
+        <i class="search bi bi-search"></i>
+        <input class="search-bar" placeholder="Busca un sonido" id="searchInput"></input>
+    </div>
+
+    <div class="categoriess-container">
+
+        <div class="sounds container">
+                
+        </div>
+    </div>
+</div>
+
+<script>
+
+    // Variables
+    var playBtns = [];
+    var soundNames = [];
+    var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
+    var searchInput = document.getElementById('searchInput');
+
+    // Function to update search results
+    function updateSearchResults(query) {
+        // Create the URL for searching
+        var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + query + '&token=' + apiKey;
+
+        // Perform GET request to fetch sounds based on the query
+        $.getJSON(searchURL, function(searchData) {
+            // Clear existing content
+            $('.sounds.container').empty();
+
+            // Check if results are found
+            if (searchData.results && searchData.results.length > 0) {
+                // Iterate through results
+                searchData.results.forEach(function(result, index) {
+                    // Dynamically create music container and other elements
+                    var musicContainer = $('<div>').addClass('music');
+                    var idContainer = $('<div>').addClass('id');
+                    var imgBtnContainer = $('<div>').addClass('img-btn');
+                    var soundName = $('<p>').addClass('soundName').text('Loading...');
+                    var trackContainer = $('<div>').addClass('track');
+                    var waveformContainer = $('<div>').addClass('waveform');
+                    var playBtn = $('<img>').addClass('playBtn').attr('src', '../../www/public/img/play.png');
+                    var dwldBtn = $('<img>').addClass('dwldBtn').attr('src', '../../www/public/img/download.png');
+
+                    // Append elements to containers
+                    imgBtnContainer.append(playBtn, dwldBtn);
+                    idContainer.append(soundName, imgBtnContainer);
+                    trackContainer.append(waveformContainer);
+                    musicContainer.append(idContainer, trackContainer);
+
+                    // Append music container to sounds container
+                    $('.sounds.container').append(musicContainer);
+
+                    // Fetch sound information using sound ID
+                    $.getJSON('https://freesound.org/apiv2/sounds/' + result.id + '/?token=' + apiKey)
+                    .done(function(data) {
+                        // Set sound name
+                        soundName.text(data.name);
+
+                        // Configure Wavesurfer
+                        const wavesurfer = WaveSurfer.create({
+                            container: musicContainer.find('.track .waveform')[0],
+                            waveColor: '#fcedb8',
+                            progressColor: '#fed74f',
+                            cursorColor: '#000',
+                            barWidth: 3,
+                            barHeight: 20,
+                            responsive: true,
+                            height: 30,
+                            barRadius: 4,
+                            backend: 'MediaElement',
+                        });
+
+                        // Load audio preview
+                        wavesurfer.load(data.previews['preview-hq-mp3']);
+
+                        // Configure play button
+                        playBtn.click(function() {
+                            wavesurfer.playPause();
+                            if (wavesurfer.isPlaying()) {
+                                playBtn.attr('src', '../../www/public/img/pause.png');
+                            } else {
+                                playBtn.attr('src', '../../www/public/img/play.png');
+                            }
+                        });
+
+                        // Handle 'finish' event
+                        wavesurfer.on('finish', function() {
+                            playBtn.attr('src', '../../www/public/img/play.png');
+                            wavesurfer.stop();
+                        });
+                    });
+                });
+            } else {
+                // If no results found, display default category sounds
+            }
+        });
+    }
+
+    // Event listener for search input
+    searchInput.addEventListener('input', function() {
+        var query = $(this).val().trim();
+        if (query === '') {
+            // If search input is empty, clear the search results
+            $('.sounds.container').empty();
+            // Display default category sounds
+        } else {
+            // Update search results
+            updateSearchResults(query);
+        }
+    });
+
+    // Function to handle search on pressing Enter
+    function handleEnterKeyPress(event) {
+        if (event.keyCode === 13) {
+            var query = $(this).val().trim();
+            if (query === '') {
+                // If search input is empty, clear the search results
+                $('.sounds.container').empty();
+                // Display default category sounds
+                updateSearchResults(category);
+            } else {
+                // Update search results
+                updateSearchResults(query);
+            }
+        }
+    }
+
+    // Event listener for Enter key press on search input
+    searchInput.addEventListener('keyup', handleEnterKeyPress);
+
+
+</script>
+
