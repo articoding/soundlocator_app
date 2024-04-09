@@ -37,5 +37,6 @@
         document.querySelector('.LogOut').addEventListener('click', function(){
              removeLocalStorageValue("id_user");
              loadPartialView("login", appRender);
+             loadPartialView("home/navbar", navRender);
         })
     </script>
