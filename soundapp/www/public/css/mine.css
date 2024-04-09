@@ -453,7 +453,7 @@ h5.card-title {
     }
 
     .sounds {
-        margin-top: 2rem !important;
+        margin-top: 1.4rem !important;
         .music {
             border:#d9d9d9 solid 1px;
             border-radius: 0.5rem;
@@ -510,7 +510,7 @@ h5.card-title {
 }
 
 .categoriess-container {
-    padding: 0rem 1.3rem 1.3rem 1.3rem !important;
+    /* padding: 0rem 1.3rem 1.3rem 1.3rem !important; */
     max-width: 100% !important;
     /* display: flex;
     flex-wrap: wrap; */
@@ -655,3 +655,21 @@ div.card3 .bg-films {
     background-image: url("../img/films.png");
 }
 
+.counting-container {
+    font-size: 0.8rem;
+    color:#555;
+    font-family: "Montserrat";
+
+    .counting {
+        margin-bottom: 0;
+        margin-top: 0.8rem;
+    }
+}
+
+.label-login {
+    margin-bottom: 0;
+}
+
+.su, .LI {
+    text-decoration: underline;
+}
