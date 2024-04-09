@@ -8,13 +8,13 @@ function login(formData) {
         success: function(response) {
             console.table(response)
             // Obtener el valor de la cookie
-            saveLocalStorageValue("id_user", response.Id_User);
+            saveLocalStorageValue("id_user", response.id_User);
 
             console.log('ID de usuario:', getLocalStorageValue("id_user"));
-            loadPartialView("Modules/Home", appRender);
-            loadPartialView("Modules/Submodules/navbar", navRender)
+            loadPartialView("user/account", appRender);
+            loadPartialView("home/navbar_2", navRender)
 
-            getUserData(parseInt(response.Id_User));
+            getUserData(parseInt(response.id_User));
         },
         error: function(jqXHR, textStatus, errorThrown) {
             // Manejar cualquier error que ocurra durante la solicitud AJAX
@@ -33,7 +33,7 @@ function register(registerData) {
         success: function(response) {
             console.table(response)
             // Obtener el valor de la cookie
-            let idUser = response.id;
+            let idUser = response.id_User;
 
             saveLocalStorageValue("id_user", idUser);
 

@@ -1,0 +1,44 @@
+<nav class="w-100 nav-init bottom-0 z-3">
+    <div class="bg-uttn-gr shadow-s d-flex">
+        <ul class="px-2 py-3 m-0 d-flex w-100">
+            <div class="li-container d-flex">
+                <li class="navmenu-button px-2">
+                   <button class="button-nav"><i class="main bi bi-houses-fill"></i></button>
+                </li>
+                <li class="navmenu-button px-2">
+                    <button class="button-nav"><i class="search bi bi-search"></i></button>
+                </li>
+                </li>
+                <li class="navmenu-button px-2">
+                    <button class="button-nav"><i class="account bi bi-person-circle"></i></button>
+                </li>
+                <li class="navmenu-button px-2">
+                    <i class="Menu bi bi-grid-fill"></i>
+                </li>
+                <li class="navmenu-button px-2">
+                    <i class="LogOut bi bi-box-arrow-right fs-3"></i>
+                    LogOut
+                </li>
+            </div>
+        </ul>
+    </div>
+    </nav>
+    
+    <script>
+        document.querySelector('.main').addEventListener('click', function(){
+            loadPartialView('/modules/main', appRender);
+        });
+    
+        document.querySelector('.search').addEventListener('click', function(){
+            loadPartialView('/home/search', appRender);
+        });
+    
+        document.querySelector('.account').addEventListener('click', function(){
+            loadPartialView('/user/account', appRender);
+        });
+        
+        document.querySelector('.LogOut').addEventListener('click', function(){
+             removeLocalStorageValue("id_user");
+             loadPartialView("login", appRender);
+        })
+    </script>
