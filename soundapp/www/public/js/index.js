@@ -36,8 +36,26 @@ function loadPartialView(viewName, divClass = null) {
 });
 }
 
+function saveLocalStorageValue(name, value) {
+    window.localStorage.setItem(name, value);
+    return console.log(name + " guardado exitosamente.")
+}
+
+function getLocalStorageValue(name) {
+    return window.localStorage.getItem(name);
+}
+
+function removeLocalStorageValue(name) {
+    window.localStorage.removeItem(name);
+    return console.log(name + " eliminado exitosamente.")
+}
+
+
+
 function onDeviceReady() {
     // Cordova is now initialized. Have fun!
+
+
 
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     // document.getElementById('deviceready').classList.add('ready');

@@ -1,5 +1,5 @@
 //Declare environment
-const local_server = "http://localhost:44397/api/"                         //Write localhost and port
+const local_server = "https://localhost:44397/api/"                        //Write localhost and port
 const public_server = ""                        //Write WEB API public address
 const local_sources = ""       //Write App local resources
 
