@@ -456,7 +456,6 @@ h5.card-title {
     }
 
     .sounds {
-<<<<<<< Updated upstream
         margin-top: 1.4rem !important;
         .music {
             border:#d9d9d9 solid 1px;
@@ -525,10 +524,7 @@ h5.card-title {
     }
 
     .sounds {
-        margin-top: 2rem !important;
-=======
         margin-top: 1.2rem !important;
->>>>>>> Stashed changes
         .music {
             border:#d9d9d9 solid 1px;
             border-radius: 0.5rem;
@@ -662,15 +658,17 @@ div.card3 .bg-films {
     background-image: url("../img/films.png");
 }
 
-<<<<<<< Updated upstream
 .counting-container {
     font-size: 0.8rem;
     color:#555;
     font-family: "Montserrat";
 
     .counting {
-        margin-bottom: 0;
-        margin-top: 0.8rem;
+        color: #909090;
+        margin-top: 0.8rem !important;
+        margin-bottom: 0 !important;
+        font-size: 0.8rem !important;
+        font-family: "Montserrat";
     }
 }
 
@@ -680,18 +678,10 @@ div.card3 .bg-films {
 
 .su, .LI {
     text-decoration: underline;
-=======
-.counting {
-    color: #909090;
-    margin-top: 0.8rem !important;
-    margin-bottom: 0 !important;
-    font-size: 0.8rem !important;
-    font-family: "Montserrat";
 }
 
-#backButton {
+/* #backButton {
     background-color: transparent !important;
     border: none !important;
     margin-bottom: 1rem !important;
->>>>>>> Stashed changes
-}
+} */
