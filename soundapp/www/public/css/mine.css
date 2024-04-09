@@ -112,9 +112,9 @@ nav{
     }
 
     .ul{
-        list-style-type: none; /* Remove bullets */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
 
     h1 {
@@ -122,8 +122,8 @@ nav{
     }
     
     .px-2 {
-        padding-right: 2.5rem !important;
-        padding-left: 2.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-left: 1.5rem !important;
     }
 
     .li-container {
