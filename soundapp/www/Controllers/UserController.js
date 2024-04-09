@@ -11,7 +11,7 @@ function login(formData) {
             saveLocalStorageValue("id_user", response.id_User);
 
             console.log('ID de usuario:', getLocalStorageValue("id_user"));
-            loadPartialView("user/account", appRender);
+            loadPartialView("user/profile", appRender);
             loadPartialView("home/navbar_2", navRender)
 
             getUserData(parseInt(response.id_User));

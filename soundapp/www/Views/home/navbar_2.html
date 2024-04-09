@@ -13,9 +13,6 @@
                     <button class="button-nav"><i class="account bi bi-person-circle"></i></button>
                 </li>
                 <li class="navmenu-button px-2">
-                    <i class="Menu bi bi-grid-fill"></i>
-                </li>
-                <li class="navmenu-button px-2">
                     <i class="LogOut bi bi-box-arrow-right fs-3"></i>
                     LogOut
                 </li>
@@ -34,7 +31,7 @@
         });
     
         document.querySelector('.account').addEventListener('click', function(){
-            loadPartialView('/user/account', appRender);
+            loadPartialView('/user/profile', appRender);
         });
         
         document.querySelector('.LogOut').addEventListener('click', function(){
