@@ -1,3 +1,5 @@
+const { load } = require("../../platforms/android/platform_www/cordova");
+
 function login(formData) {
     // Enviar la solicitud AJAX
     $.ajax({
@@ -136,4 +138,38 @@ function loadUserData() {
     loadModules(moduleJobsData, user_profile, true);
     loadModules(moduleEducationalsData, user_profile, true);
     loadModules(moduleSkillsData, user_profile, true);
+}
+
+function updateData(userData, id_user){
+    $.ajax({
+        url: updateUser + id_user,
+        method: 'PUT',
+        contentType: 'application/json',
+        data: JSON.stringify(userData),
+        success: function(response) {
+            console.table(response);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Manejar cualquier error que ocurra durante la solicitud AJAX
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });   
+}
+
+function deleteAccount(id_user){
+    $.ajax({
+        url: deleteUser + id_user,
+        method: 'DELETE',
+        contentType: 'application/json',
+        success: function(response) {
+            console.table(response);
+            removeLocalStorageValue("id_user");
+            loadPartialView('login', appRender);
+            loadPartialView('home/navbar', navRender);
+        },
+        error: function(jqXHR, textStatus, errorThrown) {
+            // Manejar cualquier error que ocurra durante la solicitud AJAX
+            console.error('Error:', textStatus, errorThrown);
+        }
+    });   
 }
