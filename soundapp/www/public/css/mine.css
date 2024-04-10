@@ -9,6 +9,7 @@
     width: 100vw;
     /* height: 400px; */
     padding: 1rem;
+
 }
 
 .circle{
@@ -24,10 +25,6 @@
   text-overflow: ellipsis; /* This line truncates text with ellipsis... */
 }
 
-div.bg-primary {
-    background-color: transparent !important;
-    height: 500px !important;
-}
 
 .profile-data{
 
@@ -197,7 +194,7 @@ span {
     font-size: .8rem !important;
     font-weight: bold;
     border: none !important;
-    margin: 0 0.4rem 0 0.4rem;
+    margin: 1.2rem 0.4rem 0 0.4rem;
 }
 
 .button-nav {
@@ -209,16 +206,33 @@ span {
     border: 0.1rem solid #fed74f !important;
     background-color: white !important;
     color: #212529 !important;
-    width: 90%;
+    width: 90% !important;
+    border-radius: 2rem !important;
+    color: #212529;
+    font-family: "Montserrat";
+    font-size: 0.9rem !important;
+    font-weight: 600;
+    margin: 0rem 0.4rem 0 0.4rem;
+    padding: 0.5rem;
+
+    &:hover {
+        background-color: #fed74f !important;
+        color: white !important;
+    }
 }
 
-.signin:hover {
-    background-color: #fed74f !important;
-    color: white !important;
-}
+
 
 .signup {
     width: 85% !important;
+    border-radius: 2rem !important;
+    background-color: #fed74f !important;
+    color: #fff;
+    font-family: "Montserrat";
+    font-size: 1rem !important;
+    font-weight: 650;
+    border: none !important;
+    margin: 0rem 0.4rem 0 0.4rem;
 }
 
 .shadow-s{
@@ -771,6 +785,273 @@ div.card3 .bg-films {
 .input-container {
     position: relative;
     margin-bottom: 20px; 
+}
+
+div.bg-primary {
+    background-color: transparent !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh !important;
+}
+
+.profile-data{
+
+    font-family: "Poppins";
+    src: url(../fonts/Poppins-Regular.ttf);
+    src: url(../fonts/Poppins-Black.ttf);
+    src: url(../fonts/Poppins-Medium.ttf);
+
+    /* background-image: url("../img/sophie-back.jpg"); Replace with your image path */
+    background-repeat: no-repeat; /* Optional: Prevents image tiling */
+    background-size: cover; /* Optional: Ensures image fills the background */
+    background-color: transparent; /* Remove background color */
+    padding: 0; /* Adjust padding if needed */
+    background-position-y: -9rem; /* Adjust position of background image */
+
+    div.bg-white{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: transparent !important;
+        width: 100%;
+
+        img{
+            position: relative;
+            top: -2rem;
+            width: 75%;
+            object-fit: contain;
+            /* object-position: .5rem 5px; */
+
+        }
+
+        div{
+            width: 100%;
+        }
+
+        h2 {
+            font-size: large !important;
+        }
+    }
+}
+
+
+
+.text-dark.custom-color{
+    color: #0011ff !important;
+    font-weight: bolder;
+
+    
+}
+
+/*Pantallas tablet*/
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position:left center;
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
+                                      /* offset horizontal: half of image width and text area width */
+    }
+}
+
+/* nav{
+
+    background-color: #fff !important;
+
+    li {
+        list-style: none;
+    }
+
+    a{
+        color: #0011ff !important;
+    }
+
+    .my-4{
+        font-family: "Poppins Semibold";
+        font-weight: bolder;
+        src: url(../fonts/Poppins-Regular.ttf);
+        src: url(../fonts/Poppins-Black.ttf);
+        src: url(../fonts/Poppins-Medium.ttf);
+
+    }
+
+    .bi-soundwave{
+        font-size: 2rem;
+        color: #fed74f    ;
+    }
+
+    .bi-gear-wide-connected{
+        font-size: 2rem;
+        color: #fed74f    ;
+    }
+
+    .ul{
+        list-style-type: none; /* Remove bullets
+        padding: 0; /* Remove default padding
+        margin: 0; /* Remove default margin
+    }
+
+    h1 {
+        font-size: x-large !important;
+    }
+    
+    .px-2 {
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
+    }
+    
+}*/
+
+div.login-view {
+
+    background-color: #fff !important;
+    padding: 1rem;
+
+    li {
+        list-style: none;
+    }
+
+    a{
+        color: #0011ff !important;
+    }
+
+    .my-4{
+        font-family: "Montserrat Semibold";
+        font-weight: bolder;
+        src: url(../fonts/Poppins-Regular.ttf);
+        src: url(../fonts/Poppins-Black.ttf);
+        src: url(../fonts/Poppins-Medium.ttf);
+
+    }
+    .shadow-sm {
+        box-shadow: none !important;
+    }
+
+    .ul{
+        list-style-type: none; /* Remove bullets */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    h1 {
+        font-size: x-large !important;
+        font-family: "Poppins";
+    }
+    
+    .px-2 {
+        padding-right: 0.75rem !important;
+        padding-left: 0.75rem !important;
+
+    }
+
+    
+    
+}
+
+
+.bg-login {
+    width: 100%;
+
+    img{
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        display:block !important;
+        width: 40%;
+        object-fit: contain;
+    
+    }
+}
+
+h2 {
+    font-family: "Montserrat Semibold";
+    font-size: x-large !important;
+}
+
+p {
+    font-family: "Montserrat";
+}
+
+
+.form-control {
+    background-color: #f4f4f3 !important;
+    border-radius: 1.75rem !important;
+    font-family: "Montserrat";
+    font-size: 0.86rem !important;
+    height: 3rem !important;
+    min-height: 2.75rem !important;
+    line-height: 1.25rem !important;
+}
+
+
+.form-floating>label {
+    padding: 0.3rem .75rem 0rem 1rem !important;
+    font-family: "Montserrat";
+    font-size: 0.75rem !important;
+    color: #a5a8ab;
+}
+
+.form-floating>.form-control {
+    padding: 1.2rem .75rem .27rem 1rem !important;
+}
+
+a {
+    text-decoration: none !important;
+}
+.my-4 {
+    font-family: "Montserrat";
+
+    span {
+        font-weight: none;
+        color: #fed74f;
+        font-size: 0.975rem !important;
+    }
+}
+.justify-content-center {
+    /* margin-top: 1.2rem !important; */
+
+    .btn {
+        --bs-btn-padding-x: 2rem;
+        --bs-btn-padding-y: .7rem;
+        border-radius: 2rem !important;
+        background-color: #fed74f !important;
+        color: #fff;
+        font-family: "Montserrat";
+        font-weight: 700;
+        font-size: large !important;
+        border: none;
+        width: 100%;
+    }
+}
+
+a {
+    color: #212529 !important;
+}
+
+.btn-viewpassword {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: transparent !important;
+    font-size: 1.3rem !important;
+    margin-right: 1.2rem !important;
+    color: #c6cbcf !important;
+    border: none;
+}
+
+.login-container, .signup-container {
+    /* padding-top: 1rem !important; */
+    padding-bottom: 1rem !important;
+    padding-left: 3rem !important;
+    padding-right: 3rem !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 
