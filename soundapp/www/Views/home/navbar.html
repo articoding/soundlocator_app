@@ -16,7 +16,7 @@
                 <i class="Menu bi bi-grid-fill"></i>
             </li> -->
             <li class="navmenu-button px-2">
-                <i class="LogOut bi bi-box-arrow-right"></i>
+                <button class="button-nav"><i class="LogOut bi bi-box-arrow-right"></i></button>
             </li>
         </div>
     </ul>
@@ -36,8 +36,8 @@
         loadPartialView('/user/account', appRender);
     });
     
-    // document.querySelector('.LogOut').addEventListener('click', function(){
+    document.querySelector('.LogOut').addEventListener('click', function(){
     //     removeLocalStorageValue("id_user");
-    //     loadPartialView("Modules/Login", appRender);
-    // })
+         loadPartialView("/user/profile", appRender);
+    })
 </script>
