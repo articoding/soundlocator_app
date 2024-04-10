@@ -678,6 +678,7 @@ div.card3 .bg-films {
 
 .su, .LI {
     text-decoration: underline;
+    cursor: pointer;
 }
 
 /* #backButton {
@@ -685,3 +686,91 @@ div.card3 .bg-films {
     border: none !important;
     margin-bottom: 1rem !important;
 } */
+
+.profile-div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #e1e1e5;
+    min-height: 100vh;
+}
+
+.profile-title {
+    z-index: 1;
+}
+
+.profile-card {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.carta {
+    border-radius: 50% !important;
+    background-color: #fed74f;
+    width: 200%;
+    height: 40rem !important;
+    margin-bottom: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: -25%;
+}
+
+.profile-pic {
+    padding: 0 !important;
+    width: 6.5rem !important;
+    border: solid #fed74f 0.3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50px);
+    bottom: -15%;
+}
+
+.user-card {
+    padding: 6rem 1rem 1rem 1rem !important;
+    background-color: #fff;
+    width: 90% !important;
+    border-radius: 1rem;
+    margin-top: 15rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50px);
+    bottom: -30%;
+}
+
+.input-container .profile-text {
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    color: #a7a7ad;
+    background-color: #fff;
+    position: absolute;
+    top: -0.4rem;
+    left: 1rem;
+    padding: 0 0.3rem 0 0.3rem;
+}
+
+.card-text {
+    border-radius: 2rem;
+    border: solid #dadae0 0.05rem;
+    height: 2.3rem;
+    color: #88888c;
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+    font-size: 0.8rem;
+}
+
+.user-card input {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px; 
+}
+
+
