@@ -71,7 +71,6 @@ function getUserData(id) {
 
 function setUserData(User) {
     console.table(User)
-    document.querySelector('.Usuario').innerHTML += User.Nickname
     document.querySelector('.Correo').innerHTML += User.Email;
     document.querySelector('.Password').innerHTML += User.Password;
     document.querySelector('.Description').innerHTML += User.Description;
