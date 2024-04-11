@@ -68,17 +68,13 @@
             appRender = body.querySelector('.app');
             navRender = body.querySelector('.nav');
             if(getLocalStorageValue("id_user") === null){
-                loadPartialView('Modules/main', appRender);
+                loadPartialView('modules/main', appRender);
                 loadPartialView('home/navbar', navRender);
             }
             else{
                 loadPartialView('user/profile', appRender);
                 loadPartialView('home/navbar_2', navRender);
             }
-
-            //loadPartialView('home/login-view', document.querySelector('.login-view'))
-            //loadPartialView('modules/main', appRender);
-            //loadPartialView('home/navbar', navRender);
         </script>
     </body>
 </html>
