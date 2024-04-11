@@ -4,13 +4,13 @@
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
-        <input class="search-bar" placeholder="Busca un sonido" id="searchInput"></input>
+        <input class="search-bar" placeholder="Busca un sonido" id="searchInput">
     </div>
 
     <div class="categoriess-container">
 
         <div class="sounds container">
-                
+
         </div>
     </div>
 </div>
@@ -29,14 +29,14 @@
         var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + query + '&token=' + apiKey;
 
         // Perform GET request to fetch sounds based on the query
-        $.getJSON(searchURL, function(searchData) {
+        $.getJSON(searchURL, function (searchData) {
             // Clear existing content
             $('.sounds.container').empty();
 
             // Check if results are found
             if (searchData.results && searchData.results.length > 0) {
                 // Iterate through results
-                searchData.results.forEach(function(result, index) {
+                searchData.results.forEach(function (result, index) {
                     // Dynamically create music container and other elements
                     var musicContainer = $('<div>').addClass('music');
                     var idContainer = $('<div>').addClass('id');
@@ -58,43 +58,48 @@
 
                     // Fetch sound information using sound ID
                     $.getJSON('https://freesound.org/apiv2/sounds/' + result.id + '/?token=' + apiKey)
-                    .done(function(data) {
-                        // Set sound name
-                        soundName.text(data.name);
+                        .done(function (data) {
+                            // Set sound name
+                            soundName.text(data.name);
 
-                        // Configure Wavesurfer
-                        const wavesurfer = WaveSurfer.create({
-                            container: musicContainer.find('.track .waveform')[0],
-                            waveColor: '#fcedb8',
-                            progressColor: '#fed74f',
-                            cursorColor: '#000',
-                            barWidth: 3,
-                            barHeight: 20,
-                            responsive: true,
-                            height: 30,
-                            barRadius: 4,
-                            backend: 'MediaElement',
-                        });
+                            // Configure Wavesurfer
+                            const wavesurfer = WaveSurfer.create({
+                                container: musicContainer.find('.track .waveform')[0],
+                                waveColor: '#fcedb8',
+                                progressColor: '#fed74f',
+                                cursorColor: '#000',
+                                barWidth: 3,
+                                barHeight: 20,
+                                responsive: true,
+                                height: 30,
+                                barRadius: 4,
+                                backend: 'MediaElement',
+                            });
 
-                        // Load audio preview
-                        wavesurfer.load(data.previews['preview-hq-mp3']);
+                            // Load audio preview
+                            wavesurfer.load(data.previews['preview-hq-mp3']);
 
-                        // Configure play button
-                        playBtn.click(function() {
-                            wavesurfer.playPause();
-                            if (wavesurfer.isPlaying()) {
-                                playBtn.attr('src', '../../www/public/img/pause.png');
-                            } else {
+                            // Configure play button
+                            playBtn.click(function () {
+                                wavesurfer.playPause();
+                                if (wavesurfer.isPlaying()) {
+                                    playBtn.attr('src', '../../www/public/img/pause.png');
+                                } else {
+                                    playBtn.attr('src', '../../www/public/img/play.png');
+                                }
+
+                                // Configure download button to redirect to Freesound page
+                                dwldBtn.click(function () {
+                                    window.location.href = 'https://freesound.org/s/' + data.id;
+                                });
+                            });
+
+                            // Handle 'finish' event
+                            wavesurfer.on('finish', function () {
                                 playBtn.attr('src', '../../www/public/img/play.png');
-                            }
+                                wavesurfer.stop();
+                            });
                         });
-
-                        // Handle 'finish' event
-                        wavesurfer.on('finish', function() {
-                            playBtn.attr('src', '../../www/public/img/play.png');
-                            wavesurfer.stop();
-                        });
-                    });
                 });
             } else {
                 // If no results found, display default category sounds
@@ -103,7 +108,7 @@
     }
 
     // Event listener for search input
-    searchInput.addEventListener('input', function() {
+    searchInput.addEventListener('input', function () {
         var query = $(this).val().trim();
         if (query === '') {
             // If search input is empty, clear the search results
@@ -136,4 +141,3 @@
 
 
 </script>
-
