@@ -65,7 +65,6 @@
 }
 
 
-
 .text-dark.custom-color{
     color: #0011ff !important;
     font-weight: bolder;
@@ -73,15 +72,15 @@
     
 }
 
-/*Pantallas tablet*/
+/*Pantallas tablet
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
         /* padding:75px 0px 75px 170px;   padding-top + padding-bottom + text area = image height
         margin:-90px 0px 0px -198px;  offset vertical: half of image height
-                                      /* offset horizontal: half of image width and text area width */
+                                      /* offset horizontal: half of image width and text area width
     }
-}
+}*/
 
 nav{
     background-color: #fff !important;
@@ -134,7 +133,6 @@ nav{
 }
 
 .title-container {
-    /* width: 100vw; */
     margin: 0;
 }
 
@@ -596,7 +594,7 @@ h5.card-title {
 
 .home-title {
     font-size: 2rem !important;
-    font-weight: 700;
+    font-weight: bold;
     text-align: center;
 
     .icon {
@@ -701,92 +699,6 @@ div.card3 .bg-films {
     margin-bottom: 1rem !important;
 } */
 
-.profile-div {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-color: #e1e1e5;
-    min-height: 100vh;
-}
-
-.profile-title {
-    z-index: 1;
-}
-
-.profile-card {
-    width: 100% !important;
-    padding: 0 !important;
-}
-
-.carta {
-    border-radius: 50% !important;
-    background-color: #fed74f;
-    width: 200%;
-    height: 40rem !important;
-    margin-bottom: 3rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    top: -25%;
-}
-
-.profile-pic {
-    padding: 0 !important;
-    width: 6.5rem !important;
-    border: solid #fed74f 0.3rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50px);
-    bottom: -15%;
-}
-
-.user-card {
-    padding: 6rem 1rem 1rem 1rem !important;
-    background-color: #fff;
-    width: 90% !important;
-    border-radius: 1rem;
-    margin-top: 15rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50px);
-    bottom: -30%;
-}
-
-.input-container .profile-text {
-    font-size: 0.7rem !important;
-    font-weight: 500 !important;
-    color: #a7a7ad;
-    background-color: #fff;
-    position: absolute;
-    top: -0.4rem;
-    left: 1rem;
-    padding: 0 0.3rem 0 0.3rem;
-}
-
-.card-text {
-    border-radius: 2rem;
-    border: solid #dadae0 0.05rem;
-    height: 2.3rem;
-    color: #88888c;
-    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
-    font-size: 0.8rem;
-}
-
-.user-card input {
-    display: block;
-    margin-bottom: 5px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.input-container {
-    position: relative;
-    margin-bottom: 20px; 
-}
-
 div.bg-primary {
     background-color: transparent !important;
     display: flex;
@@ -836,8 +748,6 @@ div.bg-primary {
     }
 }
 
-
-
 .text-dark.custom-color{
     color: #0011ff !important;
     font-weight: bolder;
@@ -859,15 +769,15 @@ div.bg-primary {
 }
 
 
-/*Pantallas tablet*/
+/* Pantallas tablet
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {
         background-position:left center;
-        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height */
-        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height */
-                                      /* offset horizontal: half of image width and text area width */
+        padding:75px 0px 75px 170px;  /* padding-top + padding-bottom + text area = image height
+        margin:-90px 0px 0px -198px;  /* offset vertical: half of image height
+                                      /* offset horizontal: half of image width and text area width
     }
-}
+} */
 
 /* nav{
 
@@ -1065,18 +975,111 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .save, .delete {
-    border: 0.1rem solid #fed74f !important;
-    background-color: white !important;
+    border: none;
+    background-color: #fed74f !important;
     color: #fff !important;
     width: 90% !important;
     border-radius: 2rem !important;
     font-family: "Montserrat";
-    font-size: 0.5rem !important;
+    font-size: 0.8rem !important;
     font-weight: 600;
     margin: 0rem 0.4rem 0 0.4rem;
     padding: 0.5rem;
+}
+
+.profile-div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background-color: #e1e1e5;
+    min-height: 100vh;
+}
+
+.profile-title {
+    position: absolute;
+    color: #fff;
+    padding: 2rem;
+}
+
+.profile-card {
+    width: 100% !important;
+    padding: 0 !important;
+}
+
+.carta {
+    border-radius: 50% !important;
+    background-color: #fed74f;
+    width: 200%;
+    height: 40rem !important;
+    margin-bottom: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: -25%;
+}
+
+.profile-pic {
+    padding: 0 !important;
+    width: 6.5rem !important;
+    border: solid #fed74f 0.3rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.user-card {
+    padding: 6rem 1rem 1rem 1rem !important;
+    background-color: #fff;
+    width: 90% !important;
+    border-radius: 1rem;
+    margin-top: 3rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50px);
+    bottom: 7%;
+}
+
+.input-container .profile-text {
+    font-size: 0.7rem !important;
+    font-weight: 500 !important;
+    color: #a7a7ad;
+    background-color: #fff;
+    position: absolute;
+    top: -0.4rem;
+    left: 1rem;
+    padding: 0 0.3rem 0 0.3rem;
+}
+
+.card-text {
+    border-radius: 2rem;
+    border: solid #dadae0 0.05rem;
+    height: 2.3rem;
+    color: #88888c;
+    padding: 0.5rem 1.3rem 0.5rem 1.3rem;
+    font-size: 0.8rem;
+}
+
+.user-card input {
+    display: block;
+    margin-bottom: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input-container {
+    position: relative;
+    margin-bottom: 20px; 
+}
+
+.button-container {
+    margin-top: 3rem;
 }

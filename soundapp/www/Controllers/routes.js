@@ -3,7 +3,7 @@ const local_server = "https://localhost:44397/api/"                        //Wri
 const public_server = "https://soundapp.bsite.net/api/"                        //Write WEB API public address
 const local_sources = ""       //Write App local resources
 
-const env = local_server                                  //Select your environment (local or public server)
+const env = public_server                                  //Select your environment (local or public server)
 
 //Users API
 
