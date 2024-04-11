@@ -1,4 +1,4 @@
-const { load } = require("../../platforms/android/platform_www/cordova");
+//const { load } = require("../../platforms/android/platform_www/cordova");
 
 function login(formData) {
     // Enviar la solicitud AJAX

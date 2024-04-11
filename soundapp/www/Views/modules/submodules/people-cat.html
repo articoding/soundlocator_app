@@ -143,6 +143,11 @@
                         wavesurfer.stop();
                     });
                     countAndDisplay();
+
+                    // Configure download button to redirect to Freesound page
+                    dwldBtn.addEventListener('click', function () {
+                        window.location.href = 'https://freesound.org/s/' + data.id;
+                    });
                 })
             });
           }
