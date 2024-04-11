@@ -954,11 +954,11 @@ div.login-view {
     width: 100%;
 
     img{
-        margin-top: 3rem;
+        margin-top: 2rem;
         margin-left: auto;
         margin-right: auto;
         display:block !important;
-        width: 40%;
+        width: 70%;
         object-fit: contain;
     
     }
@@ -1054,4 +1054,15 @@ a {
     height: 100vh;
 }
 
-
+.save, .delete {
+    border: 0.1rem solid #fed74f !important;
+    background-color: white !important;
+    color: #fff !important;
+    width: 90% !important;
+    border-radius: 2rem !important;
+    font-family: "Montserrat";
+    font-size: 0.5rem !important;
+    font-weight: 600;
+    margin: 0rem 0.4rem 0 0.4rem;
+    padding: 0.5rem;
+}
