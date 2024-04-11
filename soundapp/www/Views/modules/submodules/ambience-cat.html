@@ -4,7 +4,8 @@
     </div>
 
     <div class="class-container">
-        <p class="search-subtitle">Relajante o caótico, naturaleza o vida urbana, explora nuestra biblioteca de sonidos de ambiente.</p>
+        <p class="search-subtitle">Relajante o caótico, naturaleza o vida urbana, explora nuestra biblioteca de sonidos
+            de ambiente.</p>
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
@@ -12,12 +13,12 @@
     </div>
     <div class="counting-container">
     </div>
-        
+
     <div class="sounds container">
-        
+
     </div>
-  </div>
-    <script>
+</div>
+<script>
     // document.addEventListener('DOMContentLoaded', function() {
     //     var musicContainer = document.querySelector('.music');
     //     var newSound = musicContainer.cloneNode(true);
@@ -35,14 +36,14 @@
     var searchURL = 'https://freesound.org/apiv2/search/text/?query=' + category + '&token=' + apiKey;
 
     // Realizar la solicitud GET para buscar sonidos basados en la categoría
-    $.getJSON(searchURL, function(searchData) {
+    $.getJSON(searchURL, function (searchData) {
         // Verificar si se encontraron resultados
         if (searchData.results && searchData.results.length > 0) {
             // Obtener el contenedor .people-sounds.container
             var SoundsContainer = document.querySelector('.sounds.container');
 
             // Iterar sobre los resultados
-            searchData.results.forEach(function(result, index) {
+            searchData.results.forEach(function (result, index) {
                 // Crear dinámicamente el contenedor .music
                 var musicContainer = document.createElement('div');
                 musicContainer.className = 'music';
@@ -96,61 +97,66 @@
 
                 // Obtener información del sonido utilizando su ID
                 $.getJSON('https://freesound.org/apiv2/sounds/' + soundId + '/?token=' + apiKey)
-                .done(function(data) {
+                    .done(function (data) {
 
-                    // Establecer el nombre del sonido en el contenedor .soundName correspondiente
-                    soundNames[index].textContent = data.name;
+                        // Establecer el nombre del sonido en el contenedor .soundName correspondiente
+                        soundNames[index].textContent = data.name;
 
-                    // Configurar Wavesurfer
-                    const wavesurfer = WaveSurfer.create({
-                        container: musicContainer.querySelector('.track .waveform'),
-                        waveColor: '#fcedb8',
-                        progressColor: '#fed74f',
-                        cursorColor: '#000',
-                        barWidth: 3,
-                        barHeight: 20,
-                        responsive: true,
-                        height: 30,
-                        barRadius: 4,
-                        backend: 'MediaElement',
-                    });
+                        // Configurar Wavesurfer
+                        const wavesurfer = WaveSurfer.create({
+                            container: musicContainer.querySelector('.track .waveform'),
+                            waveColor: '#fcedb8',
+                            progressColor: '#fed74f',
+                            cursorColor: '#000',
+                            barWidth: 3,
+                            barHeight: 20,
+                            responsive: true,
+                            height: 30,
+                            barRadius: 4,
+                            backend: 'MediaElement',
+                        });
 
-                    // Manejador de errores de Wavesurfer
-                    wavesurfer.on('error', function(err) {
-                        console.error("Error de Wavesurfer:", err);
-                    });
+                        // Manejador de errores de Wavesurfer
+                        wavesurfer.on('error', function (err) {
+                            console.error("Error de Wavesurfer:", err);
+                        });
 
-                    wavesurfer.load(data.previews['preview-hq-mp3']);
+                        wavesurfer.load(data.previews['preview-hq-mp3']);
 
-                    // Configurar el botón de reproducción
-                    playBtns[index].onclick = function() {
-                        wavesurfer.playPause();
-                        if (wavesurfer.isPlaying()) {
-                            playBtns[index].src = '../../www/public/img/pause.png';
-                        } else {
+                        // Configurar el botón de reproducción
+                        playBtns[index].onclick = function () {
+                            wavesurfer.playPause();
+                            if (wavesurfer.isPlaying()) {
+                                playBtns[index].src = '../../www/public/img/pause.png';
+                            } else {
+                                playBtns[index].src = '../../www/public/img/play.png';
+                            }
+                        };
+
+                        // Manejar el evento 'finish' de Wavesurfer
+                        wavesurfer.on('finish', function () {
                             playBtns[index].src = '../../www/public/img/play.png';
-                        }
-                    };
+                            wavesurfer.stop();
+                        });
+                        countAndDisplay();
 
-                    // Manejar el evento 'finish' de Wavesurfer
-                    wavesurfer.on('finish', function() {
-                        playBtns[index].src = '../../www/public/img/play.png';
-                        wavesurfer.stop();
-                    });
-                    countAndDisplay();
-                })
+                        // Configure download button to redirect to Freesound page
+                        dwldBtn.addEventListener('click', function () {
+                            window.location.href = 'https://freesound.org/s/' + data.id;
+                        });
+                    })
             });
-          }
-        });
-
-        
-        function countAndDisplay() {
-            var count = $('.sounds.container .music').length;
-            var countElement = $('<p class="counting"></p>');
-            countElement.text('Se han encontrado ' + count + ' sonidos');
-            $('.counting-container').empty();
-            $('.counting-container').append(countElement);
         }
+    });
 
-      </script>
+
+    function countAndDisplay() {
+        var count = $('.sounds.container .music').length;
+        var countElement = $('<p class="counting"></p>');
+        countElement.text('Se han encontrado ' + count + ' sonidos');
+        $('.counting-container').empty();
+        $('.counting-container').append(countElement);
+    }
+
+</script>
 </div>
