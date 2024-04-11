@@ -4,7 +4,8 @@
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
-        <input class="search-bar" placeholder="Busca un sonido" id="searchInput"></input>
+        <input class="search-bar" placeholder="Busca un sonido" id="searchInput" oninput="toggleCancelButton()"></input>
+        <button class="cancel-button" id="cancelButton" onclick="cancelSearch()">Cancelar</button>
     </div>
 
     <div class="categoriess-container">

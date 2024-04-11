@@ -761,12 +761,16 @@ div.bg-primary {
 }
 
 .cancel-button {
-    display: none;
+    display: flex;
     border: 1px solid #ccc; 
     border-radius: 20px; 
     padding: 5px 10px; 
     margin-left: 5px;
+    justify-content: flex-end;
+
 }
+
+
 
 
 /* Pantallas tablet
