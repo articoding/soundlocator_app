@@ -755,6 +755,20 @@ div.bg-primary {
     
 }
 
+.search-bar {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Vertically center items */
+}
+
+.cancel-button {
+    display: none;
+    border: 1px solid #ccc; 
+    border-radius: 20px; 
+    padding: 5px 10px; 
+    margin-left: 5px;
+}
+
+
 /* Pantallas tablet
 @media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
     .app {

@@ -4,7 +4,7 @@
     </div>
     <div class="search-bar">
         <i class="search bi bi-search"></i>
-        <input class="search-bar" placeholder="Busca un sonido" id="searchInput">
+        <input class="search-bar" placeholder="Busca un sonido" id="searchInput"></input>
     </div>
 
     <div class="categoriess-container">
@@ -139,5 +139,18 @@
     // Event listener for Enter key press on search input
     searchInput.addEventListener('keyup', handleEnterKeyPress);
 
+    function toggleCancelButton() {
+        var inputText = document.getElementById('searchInput').value;
+        var cancelButton = document.getElementById('cancelButton');
+        if (inputText.trim().length > 0) {
+            cancelButton.style.display = 'inline-block';
+        } else {
+            cancelButton.style.display = 'none';
+        }
+    }
+
+    document.querySelector('.cancel-button').addEventListener('click', function(){
+        loadPartialView('/home/search', appRender);
+    })
 
 </script>
