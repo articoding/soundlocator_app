@@ -25,6 +25,19 @@
   text-overflow: ellipsis; /* This line truncates text with ellipsis... */
 }
 
+.home-title {
+    font-size: 2rem !important;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat';
+}
+
+.title {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat';
+}
 
 .profile-data{
 
@@ -761,12 +774,16 @@ div.bg-primary {
 }
 
 .cancel-button {
-    display: none;
+    display: flex;
     border: 1px solid #ccc; 
     border-radius: 20px; 
     padding: 5px 10px; 
     margin-left: 5px;
+    justify-content: flex-end;
+
 }
+
+
 
 
 /* Pantallas tablet
@@ -1005,7 +1022,7 @@ a {
 .profile-title {
     position: absolute;
     color: #fff;
-    padding: 2rem;
+    padding: 3rem;
 }
 
 .profile-card {
@@ -1013,27 +1030,27 @@ a {
     padding: 0 !important;
 }
 
+.profile-container {
+    background-color: #e1e1e5;
+}
+
 .carta {
-    border-radius: 50% !important;
+    border-radius: 0 0 60% 60% !important;
     background-color: #fed74f;
-    width: 200%;
-    height: 40rem !important;
-    margin-bottom: 3rem;
-    position: absolute;
+    width: 100%;
+    height: 14rem !important;
+    /* position: absolute;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
-    top: -25%;
+    top: -25%; */
 }
 
 .profile-pic {
     padding: 0 !important;
     width: 6.5rem !important;
     border: solid #fed74f 0.3rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    /* position: absolute;
+    z-index: 2; */
 }
 
 .user-card {
@@ -1041,11 +1058,7 @@ a {
     background-color: #fff;
     width: 90% !important;
     border-radius: 1rem;
-    margin-top: 3rem;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50px);
-    bottom: 7%;
+    margin: auto;
 }
 
 .input-container .profile-text {
