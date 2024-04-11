@@ -25,6 +25,19 @@
   text-overflow: ellipsis; /* This line truncates text with ellipsis... */
 }
 
+.home-title {
+    font-size: 2rem !important;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat';
+}
+
+.title {
+    font-size: 1.5rem !important;
+    font-weight: bold;
+    text-align: center;
+    font-family: 'Montserrat';
+}
 
 .profile-data{
 
