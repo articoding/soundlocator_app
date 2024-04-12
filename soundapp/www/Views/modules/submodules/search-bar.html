@@ -24,6 +24,20 @@
     var apiKey = 'w16UskGC58N8mYEcigobTO8XZKU6jg43jCuZc5T3';
     var searchInput = document.getElementById('searchInput');
 
+    // Throttle function to limit the rate of API requests
+    function throttle(func, delay) {
+        let lastCall = 0;
+        return function(...args) {
+            const now = new Date().getTime();
+            if (now - lastCall < delay) {
+                // If the time since the last call is less than the delay, ignore this call
+                return;
+            }
+            lastCall = now;
+            return func(...args);
+        };
+    }
+
     // Function to update search results
     function updateSearchResults(query) {
         // Create the URL for searching
@@ -108,6 +122,9 @@
         });
     }
 
+    // Throttled version of updateSearchResults function
+    const throttledUpdateSearchResults = throttle(updateSearchResults, 1000); // Adjust the delay (in milliseconds) as needed
+
     // Event listener for search input
     searchInput.addEventListener('input', function () {
         var query = $(this).val().trim();
@@ -116,8 +133,8 @@
             $('.sounds.container').empty();
             // Display default category sounds
         } else {
-            // Update search results
-            updateSearchResults(query);
+            // Update search results with throttled function
+            throttledUpdateSearchResults(query);
         }
     });
 
@@ -132,7 +149,7 @@
                 updateSearchResults(category);
             } else {
                 // Update search results
-                updateSearchResults(query);
+                throttledUpdateSearchResults(query);
             }
         }
     }
