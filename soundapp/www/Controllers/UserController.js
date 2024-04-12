@@ -75,7 +75,7 @@ function setUserData(User) {
     console.table(User)
     document.querySelector('.Correo').innerHTML += User.Email;
     document.querySelector('.Password').innerHTML += User.Password;
-    document.querySelector('.Description').innerHTML += User.Description;
+
 }
 
 function getAllUsers() {
