@@ -6,10 +6,10 @@
     <div class="class-container">
         <p class="search-subtitle">Sumérgete en la naturaleza salvaje y el reino animal con sonidos que te transportarán a la selva, la granja o el zoológico.</p>
     </div>
-    <div class="search-bar">
+    <!-- <div class="search-bar">
         <i class="search bi bi-search"></i>
-        <input class="search-bar" placeholder="Busca un sonido"></input>
-    </div>
+        <input class="search-bar" placeholder="Busca un sonido">
+    </div> -->
     <div class="counting-container">
     </div>
         
@@ -80,11 +80,11 @@
                 // Crear los elementos img para los botones de reproducción y descarga
                 var playBtn = document.createElement('img');
                 playBtn.className = 'playBtn';
-                playBtn.src = '../../www/public/img/play.png';
+                playBtn.src = 'www/public/img/play.png';
 
                 var dwldBtn = document.createElement('img');
                 dwldBtn.className = 'dwldBtn';
-                dwldBtn.src = '../../www/public/img/download.png';
+                dwldBtn.src = 'www/public/img/download.png';
 
                 // Agregar los elementos creados al DOM
                 imgBtnContainer.appendChild(playBtn);
@@ -95,8 +95,8 @@
                 musicContainer.appendChild(idContainer);
                 musicContainer.appendChild(trackContainer);
 
-                // Agregar el contenedor .music al contenedor .people-sounds.container
-                peopleSoundsContainer.appendChild(musicContainer);
+                // Agregar el contenedor .music al contenedor .sounds.container
+                SoundsContainer.appendChild(musicContainer);
 
                 // Guardar las referencias a los botones de reproducción y nombres de sonido
                 playBtns.push(playBtn);
@@ -107,66 +107,66 @@
 
                 // Obtener información del sonido utilizando su ID
                 $.getJSON('https://freesound.org/apiv2/sounds/' + soundId + '/?token=' + apiKey)
-                .done(function(data) {
+                    .done(function (data) {
 
-                    // Establecer el nombre del sonido en el contenedor .soundName correspondiente
-                    soundNames[index].textContent = data.name;
+                        // Establecer el nombre del sonido en el contenedor .soundName correspondiente
+                        soundNames[index].textContent = data.name;
 
-                    // Configurar Wavesurfer
-                    const wavesurfer = WaveSurfer.create({
-                        container: musicContainer.querySelector('.track .waveform'),
-                        waveColor: '#fcedb8',
-                        progressColor: '#fed74f',
-                        cursorColor: '#000',
-                        barWidth: 3,
-                        barHeight: 20,
-                        responsive: true,
-                        height: 30,
-                        barRadius: 4,
-                        backend: 'MediaElement',
-                    });
+                        // Configurar Wavesurfer
+                        const wavesurfer = WaveSurfer.create({
+                            container: musicContainer.querySelector('.track .waveform'),
+                            waveColor: '#fcedb8',
+                            progressColor: '#fed74f',
+                            cursorColor: '#000',
+                            barWidth: 3,
+                            barHeight: 20,
+                            responsive: true,
+                            height: 30,
+                            barRadius: 4,
+                            backend: 'MediaElement',
+                        });
 
-                    // Manejador de errores de Wavesurfer
-                    wavesurfer.on('error', function(err) {
-                        console.error("Error de Wavesurfer:", err);
-                    });
+                        // Manejador de errores de Wavesurfer
+                        wavesurfer.on('error', function (err) {
+                            console.error("Error de Wavesurfer:", err);
+                        });
 
-                    wavesurfer.load(data.previews['preview-hq-mp3']);
+                        wavesurfer.load(data.previews['preview-hq-mp3']);
 
-                    // Configurar el botón de reproducción
-                    playBtns[index].onclick = function() {
-                        wavesurfer.playPause();
-                        if (wavesurfer.isPlaying()) {
-                            playBtns[index].src = '../../www/public/img/pause.png';
-                        } else {
-                            playBtns[index].src = '../../www/public/img/play.png';
-                        }
-                    };
+                        // Configurar el botón de reproducción
+                        playBtns[index].onclick = function () {
+                            wavesurfer.playPause();
+                            if (wavesurfer.isPlaying()) {
+                                playBtns[index].src = 'www/public/img/pause.png';
+                            } else {
+                                playBtns[index].src = 'www/public/img/play.png';
+                            }
+                        };
 
-                    // Manejar el evento 'finish' de Wavesurfer
-                    wavesurfer.on('finish', function() {
-                        playBtns[index].src = '../../www/public/img/play.png';
-                        wavesurfer.stop();
-                    });
-                    countAndDisplay();
+                        // Manejar el evento 'finish' de Wavesurfer
+                        wavesurfer.on('finish', function () {
+                            playBtns[index].src = 'www/public/img/play.png';
+                            wavesurfer.stop();
+                        });
+                        countAndDisplay();
 
-                    // Configure download button to redirect to Freesound page
-                    dwldBtn.addEventListener('click', function () {
-                        window.location.href = 'https://freesound.org/s/' + data.id;
-                    });
-                })
+                        // Configure download button to redirect to Freesound page
+                        dwldBtn.addEventListener('click', function () {
+                            window.location.href = 'https://freesound.org/s/' + data.id;
+                        });
+                    })
             });
-          }
-        });
-
-        
-        function countAndDisplay() {
-            var count = $('.sounds.container .music').length;
-            var countElement = $('<p class="counting"></p>');
-            countElement.text('Se han encontrado ' + count + ' sonidos');
-            $('.counting-container').empty();
-            $('.counting-container').append(countElement);
         }
+    });
 
-      </script>
+
+    function countAndDisplay() {
+        var count = $('.sounds.container .music').length;
+        var countElement = $('<p class="counting"></p>');
+        countElement.text('Se han encontrado ' + count + ' sonidos');
+        $('.counting-container').empty();
+        $('.counting-container').append(countElement);
+    }
+
+</script>
 </div>

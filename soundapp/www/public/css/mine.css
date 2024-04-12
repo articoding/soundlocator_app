@@ -40,7 +40,7 @@
 }
 
 .profile-data{
-
+    height: 75vh !important;
     font-family: "Montserrat";
     src: url(../fonts/Montserrat-Regular.ttf);
     src: url(../fonts/Montserrat-Black.ttf);
@@ -367,7 +367,7 @@ h4.search-subtitle {
 }
 
 .card {
-    height: 7rem !important;
+    height: 20vh !important;
     width: calc(50% - 0.5rem);
     margin: 0.5rem 0 0.5rem 0;
     box-sizing: border-box;
@@ -1075,7 +1075,8 @@ a {
 .input-container .profile-text {
     font-size: 0.7rem !important;
     font-weight: 500 !important;
-    color: #a7a7ad;
+    color: #444446;
+    /* color: #a7a7ad; */
     background-color: #fff;
     position: absolute;
     top: -0.4rem;
@@ -1091,6 +1092,7 @@ a {
     color: #88888c;
     padding: 0.5rem 1.3rem 0.1rem 0.2rem;
     font-size: 0.8rem;
+    background-color: #fff !important;
 }
 
 .user-card input {
@@ -1104,6 +1106,7 @@ a {
     position: relative;
     margin-bottom: 20px; 
     display: flex;
+    background-color: #fff !important;
 }
 
 .button-container {
@@ -1183,7 +1186,8 @@ a {
 .card-text-na, .card-text-lastn {
     font-size: 0.7rem !important;
     font-weight: 500 !important;
-    color: #a7a7ad;
+    color: #444446;
+    /* color: #a7a7ad; */
     background-color: #fff;
     width: calc(50% - 0.5rem) !important;
     padding: 0 0.3rem 0 0.3rem;
@@ -1209,4 +1213,13 @@ a {
 
 .ln-card-text {
     margin-right: 0 !important;
+}
+
+.column1 {
+    width: 1.85rem;
+}
+
+.column2 {
+    margin-left: 0.5rem;
+    width: 100%;
 }

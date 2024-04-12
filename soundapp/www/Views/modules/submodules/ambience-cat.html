@@ -7,10 +7,10 @@
         <p class="search-subtitle">Relajante o caótico, naturaleza o vida urbana, explora nuestra biblioteca de sonidos
             de ambiente.</p>
     </div>
-    <div class="search-bar">
+    <!-- <div class="search-bar">
         <i class="search bi bi-search"></i>
         <input class="search-bar" placeholder="Busca un sonido">
-    </div>
+    </div> -->
     <div class="counting-container">
     </div>
 
@@ -70,11 +70,11 @@
                 // Crear los elementos img para los botones de reproducción y descarga
                 var playBtn = document.createElement('img');
                 playBtn.className = 'playBtn';
-                playBtn.src = '../../www/public/img/play.png';
+                playBtn.src = 'www/public/img/play.png';
 
                 var dwldBtn = document.createElement('img');
                 dwldBtn.className = 'dwldBtn';
-                dwldBtn.src = '../../www/public/img/download.png';
+                dwldBtn.src = 'www/public/img/download.png';
 
                 // Agregar los elementos creados al DOM
                 imgBtnContainer.appendChild(playBtn);
@@ -127,15 +127,15 @@
                         playBtns[index].onclick = function () {
                             wavesurfer.playPause();
                             if (wavesurfer.isPlaying()) {
-                                playBtns[index].src = '../../www/public/img/pause.png';
+                                playBtns[index].src = 'www/public/img/pause.png';
                             } else {
-                                playBtns[index].src = '../../www/public/img/play.png';
+                                playBtns[index].src = 'www/public/img/play.png';
                             }
                         };
 
                         // Manejar el evento 'finish' de Wavesurfer
                         wavesurfer.on('finish', function () {
-                            playBtns[index].src = '../../www/public/img/play.png';
+                            playBtns[index].src = 'www/public/img/play.png';
                             wavesurfer.stop();
                         });
                         countAndDisplay();
