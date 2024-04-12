@@ -74,11 +74,11 @@
                 // Crear los elementos img para los botones de reproducción y descarga
                 var playBtn = document.createElement('img');
                 playBtn.className = 'playBtn';
-                playBtn.src = 'www/public/img/play.png';
+                playBtn.src = 'public/img/play.png';
 
                 var dwldBtn = document.createElement('img');
                 dwldBtn.className = 'dwldBtn';
-                dwldBtn.src = 'www/public/img/download.png';
+                dwldBtn.src = 'public/img/download.png';
 
                 // Agregar los elementos creados al DOM
                 imgBtnContainer.appendChild(playBtn);
@@ -131,15 +131,15 @@
                         playBtns[index].onclick = function () {
                             wavesurfer.playPause();
                             if (wavesurfer.isPlaying()) {
-                                playBtns[index].src = 'www/public/img/pause.png';
+                                playBtns[index].src = 'public/img/pause.png';
                             } else {
-                                playBtns[index].src = 'www/public/img/play.png';
+                                playBtns[index].src = 'public/img/play.png';
                             }
                         };
 
                         // Manejar el evento 'finish' de Wavesurfer
                         wavesurfer.on('finish', function () {
-                            playBtns[index].src = 'www/public/img/play.png';
+                            playBtns[index].src = 'public/img/play.png';
                             wavesurfer.stop();
                         });
                         countAndDisplay();

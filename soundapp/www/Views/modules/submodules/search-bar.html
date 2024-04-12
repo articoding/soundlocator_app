@@ -59,8 +59,8 @@
                     var soundName = $('<p>').addClass('soundName').text('Loading...');
                     var trackContainer = $('<div>').addClass('track');
                     var waveformContainer = $('<div>').addClass('waveform');
-                    var playBtn = $('<img>').addClass('playBtn').attr('src', '../../www/public/img/play.png');
-                    var dwldBtn = $('<img>').addClass('dwldBtn').attr('src', '../../www/public/img/download.png');
+                    var playBtn = $('<img>').addClass('playBtn').attr('src', 'public/img/play.png');
+                    var dwldBtn = $('<img>').addClass('dwldBtn').attr('src', 'public/img/download.png');
 
                     // Append elements to containers
                     imgBtnContainer.append(playBtn, dwldBtn);
@@ -98,9 +98,9 @@
                             playBtn.click(function () {
                                 wavesurfer.playPause();
                                 if (wavesurfer.isPlaying()) {
-                                    playBtn.attr('src', '../../www/public/img/pause.png');
+                                    playBtn.attr('src', 'public/img/pause.png');
                                 } else {
-                                    playBtn.attr('src', '../../www/public/img/play.png');
+                                    playBtn.attr('src', 'public/img/play.png');
                                 }
 
                                 // Configure download button to redirect to Freesound page
@@ -111,7 +111,7 @@
 
                             // Handle 'finish' event
                             wavesurfer.on('finish', function () {
-                                playBtn.attr('src', '../../www/public/img/play.png');
+                                playBtn.attr('src', 'public/img/play.png');
                                 wavesurfer.stop();
                             });
                         });
