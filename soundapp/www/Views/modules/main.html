@@ -10,7 +10,7 @@
     
 <div class="home-container">
     <div class="card2">
-        <div class="bg-entertainment" >
+        <div class="bg-entertainment">
         </div>
         <h5 class="card2-title">Entretenimiento</h5>
     </div>
@@ -28,4 +28,16 @@
     </div>
 </div>
 
+<script>
+     document.querySelector('.bg-entertainment').addEventListener('click', function(){
+        loadPartialView('modules/submodules/entertainment-cat', appRender);
+    })
 
+    document.querySelector('.bg-cartoons2').addEventListener('click', function(){
+        loadPartialView('modules/submodules/cartoons-cat', appRender);
+    })
+
+    document.querySelector('.bg-films').addEventListener('click', function(){
+        loadPartialView('modules/submodules/films-cat', appRender);
+    })
+</script>
