@@ -45,7 +45,7 @@ function loadPartialView(viewName, divClass = null) {
                 console.error('Error al cargar la vista parcial', error);
             }
         });
-    }, 3000); // Retraso de 2 segundos
+    }, 2000); // Retraso de 2 segundos
 }
 
 function saveLocalStorageValue(name, value) {
