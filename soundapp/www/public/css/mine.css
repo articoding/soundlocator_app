@@ -343,7 +343,7 @@ input.search-bar {
     margin: 0 !important;
     padding: 0 0.2rem 0 0.4rem !important;
     font-family: "Montserrat";
-    width: auto;
+    width: 90%;
 
     &:focus {
         outline: none !important;
