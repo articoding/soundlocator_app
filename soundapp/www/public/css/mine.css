@@ -322,8 +322,13 @@ div.home-main-container {
     border-radius: .4rem;
 }
 
-.bi-search {
-    color: #d9d9d9;
+.bi-search, .bi-x-lg {
+    color: #cac9c9;
+}
+
+.bi-x-lg {
+    width: 4rem;
+    justify-self: end;
 }
 
 input.search-bar {
@@ -782,8 +787,7 @@ div.bg-primary {
     border: none !important; 
     background-color: #f9faf9 !important;
     color: #88888c;
-    font-weight: 500;
-    padding: 5px 10px; 
+    font-weight: 500; 
     margin-left: 5px;
     justify-content: flex-end;
     font-family: "Montserrat";
@@ -1225,3 +1229,4 @@ a {
     margin-left: 0.5rem;
     width: 100%;
 }
+
