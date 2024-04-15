@@ -326,10 +326,16 @@ div.home-main-container {
     color: #cac9c9;
 }
 
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
 .bi-x-lg {
     width: 4rem;
-    justify-self: end;
+    text-align: right;
 }
+
 
 input.search-bar {
     background-color: transparent;
