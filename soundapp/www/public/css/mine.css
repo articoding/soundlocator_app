@@ -326,7 +326,7 @@ div.home-main-container {
     color: #cac9c9;
 }
 
-.container {
+#cancelButton {
     display: flex;
     justify-content: flex-end;
 }
