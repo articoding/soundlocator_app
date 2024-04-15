@@ -18,9 +18,10 @@
     under the License.
 -->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <!--
+
+<head>
+    <meta charset="utf-8">
+    <!--
         Customize this policy to fit your own app's needs. For more guidance, please refer to the docs:
             https://cordova.apache.org/docs/en/latest/
         Some notes:
@@ -29,52 +30,64 @@
                 * Enable inline JS: add 'unsafe-inline' to default-src
                 <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         -->
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <meta name="color-scheme" content="light dark">
-        <link rel="stylesheet" href="public/css/mine.css">
-        <link rel="stylesheet" href="public/css/bootstrap/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="public/css/bootstrap-icons/font/bootstrap-icons.min.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/png" href="public/img/broadcast-pin.png">
-        <title>SoundApp</title>
-        <script src="public/js/jquery-3.2.1.min.js"></script>
-        <script src="https://unpkg.com/wavesurfer.js@7"></script>
-        <script src="public/css/bootstrap/dist/js/bootstrap.min.js"></script>
-        <script src="public/js/@popperjs/core/dist/umd/popper.min.js"></script>
-        <script src="Controllers/UserController.js"></script>
-        <script src="Controllers/routes.js"></script>
-        
-    </head>
-    <body>
-        <!--Main Content-->
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="public/css/mine.css">
+    <link rel="stylesheet" href="public/css/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="public/css/bootstrap-icons/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" type="image/png" href="public/img/broadcast-pin.png">
+    <title>SoundApp</title>
+    <script src="public/js/jquery-3.2.1.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+    <script src="public/css/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="public/js/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="Controllers/UserController.js"></script>
+    <script src="Controllers/routes.js"></script>
 
-        <div class="app">
-            
-        </div>
-        <!--End Main Content-->
-         <!--Navbar-->
-        <div class="nav position-fixed bottom-0 w-100 z-3">
+</head>
 
+<body>
+    <!-- Loading Screen -->
+    <div class="loading" style="display:none;">
+        <div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
+            <div class="spinner-border text-primary" role="status">
+                <span class="sr-only">Cargando...</span>
+            </div>
         </div>
-         <!--End Navbar-->
-        <script src="cordova.js"></script>
-        <script src="public/js/index.js"></script>
-        <script> // Load the menu partial view
-            body = document.querySelector('body');
-            appRender = body.querySelector('.app');
-            navRender = body.querySelector('.nav');
-            if(getLocalStorageValue("id_user") === null){
-                loadPartialView('modules/main', appRender);
-                loadPartialView('home/navbar', navRender);
-            }
-            else{
-                loadPartialView('user/profile', appRender);
-                loadPartialView('home/navbar_2', navRender);
-            }
-        </script>
-    </body>
+    </div>
+
+    <!--Main Content-->
+
+    <div class="app">
+
+    </div>
+    <!--End Main Content-->
+    <!--Navbar-->
+    <div class="nav position-fixed bottom-0 w-100 z-3">
+
+    </div>
+    <!--End Navbar-->
+    <script src="cordova.js"></script>
+    <script src="public/js/index.js"></script>
+    <script> // Load the menu partial view
+        body = document.querySelector('body');
+        appRender = body.querySelector('.app');
+        navRender = body.querySelector('.nav');
+        if (getLocalStorageValue("id_user") === null) {
+            loadPartialView('modules/main', appRender);
+            loadPartialView('home/navbar', navRender);
+        }
+        else {
+            loadPartialView('user/profile', appRender);
+            loadPartialView('home/navbar_2', navRender);
+        }
+    </script>
+</body>
+
 </html>

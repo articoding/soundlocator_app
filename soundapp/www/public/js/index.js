@@ -22,8 +22,10 @@
 
 document.addEventListener('deviceready', onDeviceReady, false);
 
-//Function to load partial views
 function loadPartialView(viewName, divClass = null) {
+    // Mostrar la pantalla de carga
+    $('.loading').show();
+
     $.ajax({
         url: 'Views/' + viewName + '.html',
         method: 'GET',
@@ -32,8 +34,12 @@ function loadPartialView(viewName, divClass = null) {
         },
         error: function(xhr, status, error) {
             console.error('Error al cargar la vista parcial', error);
+        },
+        complete: function() {
+            // Ocultar la pantalla de carga
+            $('.loading').hide();
         }
-});
+    });
 }
 
 function saveLocalStorageValue(name, value) {
