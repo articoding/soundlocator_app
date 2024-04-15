@@ -23,23 +23,29 @@
 document.addEventListener('deviceready', onDeviceReady, false);
 
 function loadPartialView(viewName, divClass = null) {
+    // Limpiar el contenido actual
+    $(divClass).html('');
+
     // Mostrar la pantalla de carga
     $('.loading').show();
 
-    $.ajax({
-        url: 'Views/' + viewName + '.html',
-        method: 'GET',
-        success: function(data) {
-            $(divClass).html(data);
-        },
-        error: function(xhr, status, error) {
-            console.error('Error al cargar la vista parcial', error);
-        },
-        complete: function() {
-            // Ocultar la pantalla de carga
-            $('.loading').hide();
-        }
-    });
+    // Agregar un retraso artificial para ver la pantalla de carga
+    setTimeout(function() {
+        $.ajax({
+            url: 'Views/' + viewName + '.html',
+            method: 'GET',
+            success: function(data) {
+                // Ocultar la pantalla de carga
+                $('.loading').hide();
+
+                // Mostrar la nueva vista
+                $(divClass).html(data);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error al cargar la vista parcial', error);
+            }
+        });
+    }, 3000); // Retraso de 2 segundos
 }
 
 function saveLocalStorageValue(name, value) {
