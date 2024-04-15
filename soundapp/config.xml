@@ -9,4 +9,7 @@
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
     <icon src="www/public/img/logo-soundapp.png" />
+    <preference name="SplashScreenDelay" value="5000" />
+    <preference name="AutoHideSplashScreen" value="true" />
+    <splash density="xxhdpi" platform="android" src="package-assets/Default@2x~universal~anyany.png"></splash>
 </widget>
