@@ -5,9 +5,7 @@
             <li class="navmenu-button px-2">
                <button class="button-nav"><i class="main bi bi-houses-fill"></i></button>
             </li>
-            <li class="navmenu-button px-2">
-                <button class="button-nav"><i class="search bi bi-search"></i></button>
-            </li>
+           
             </li>
             <li class="navmenu-button px-2">
                 <button class="button-nav"><i class="account bi bi-person-circle"></i></button>
@@ -22,9 +20,6 @@
         loadPartialView('modules/main', appRender);
     });
 
-    document.querySelector('.search').addEventListener('click', function(){
-        loadPartialView('home/search', appRender);
-    });
 
     document.querySelector('.account').addEventListener('click', function(){
         loadPartialView('user/account', appRender);
