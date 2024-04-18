@@ -139,9 +139,15 @@
                         });
                         countAndDisplay();
 
-                        // Configure download button to redirect to Freesound page
-                        dwldBtn.addEventListener('click', function () {
-                            window.location.href = 'https://freesound.org/s/' + data.id;
+                         // Configure download button to download the sound file
+                         dwldBtn.addEventListener('click', function () {
+                            // Create a temporary anchor element
+                            var downloadLink = document.createElement('a');
+                            downloadLink.href = data.previews['preview-hq-mp3']; // Link to the sound file
+                            downloadLink.download = data.name + '.mp3'; // Set the filename for the downloaded file
+                            document.body.appendChild(downloadLink);
+                            downloadLink.click(); // Simulate a click on the anchor element to trigger download
+                            document.body.removeChild(downloadLink); // Clean up: remove the temporary anchor element
                         });
                     })
             });
